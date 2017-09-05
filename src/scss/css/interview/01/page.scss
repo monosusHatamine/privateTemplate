@@ -1,0 +1,759 @@
+@charset "utf-8";
+
+@import "../../../common/base/variable";
+@import "../../../common/base/mixin";
+
+/* =========================================================
+base
+========================================================= */
+body {
+  opacity: 0;
+  min-width: 1075px;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    min-width: 320px;
+  }
+}
+
+.visual {
+  height: 623px;
+  background: url(/brand/am6/interview/01/images/visual.png) center center no-repeat #fcf4ed;
+  position: relative;
+  @include mq-sp() {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    padding-top: 97.8%;
+    background: url(/brand/am6/interview/01/images/sp/visual.png) center center no-repeat #fcf4ed;
+    background-size: cover;
+  }
+}
+
+.visual .text {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -550px;
+  text-align: left;
+  @include mq-sp() {
+    top: 25px;
+    right: 0;
+    margin-left: 0;
+  }
+}
+
+.visual .text .num {
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  @include mq-sp() {
+    font-size: 12px;
+  } 
+}
+
+.visual .text .num img {
+  margin-bottom: 20px;
+  @include mq-sp() {
+    width: 25px;
+    height: 28px;
+    margin-bottom: 0;
+  }   
+}
+
+.visual .text h1 {
+  font-size: 34px;
+  margin-bottom: 40px;
+  @include mq-sp() {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+}
+
+.visual .text p {
+  font-size: 20px;
+  @include mq-sp() {
+    font-size: 12px;
+  }
+
+}
+
+.visual .text p img {
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 7px;
+  @include mq-sp() {
+    width: 9px;
+    height: auto;
+    margin: 0 2px;
+  } 
+
+}
+
+.visual .text p span {
+  font-size: 13px;
+  @include mq-sp() {
+    font-size: 11px;
+  }  
+}
+
+/* =========================================================
+container
+========================================================= */
+#container {
+  font-family:  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 150px;
+  color: #111;
+  @include mq-sp() {
+    padding-top: 30px;
+  } 
+  div {
+    box-sizing: initial;
+    @include mq-sp() {
+      box-sizing: border-box;
+    }
+  }
+}
+
+/* =========================================================
+leadArea
+========================================================= */
+#container #leadArea {
+  padding-bottom: 150px;
+  @include mq-sp() {
+    padding-bottom: 25px;
+  } 
+}
+
+#container #leadArea .wrap {
+  width:820px;
+  margin: 0 auto;
+  text-align: center;
+  @include mq-sp() {
+    width: 100%;
+    padding: 0 15px;
+  }  
+}
+
+#container #leadArea .wrap .text h2 {
+  display: inline-block;
+  line-height: 1.9em;
+  @include mq-sp() {
+    font-size: 19px;
+  } 
+}
+
+#container #leadArea .wrap .text h2 span {
+  display: inline-block;
+  background: url(/brand/am6/interview/01/images/h_line.png) left  bottom no-repeat;
+  line-height: 1.9em;
+  @include mq-sp() {
+    display: inline;
+    padding-bottom: 7px;
+    background: url(/brand/am6/interview/01/images/sp/h_line.png) left  bottom no-repeat;
+    background-size: 161px 3px;
+    background-position: 2px bottom;
+  }  
+}
+
+#container #leadArea .wrap .text p {
+  font-weight: 700;
+  color: #000;
+   @include mq-sp() {
+    text-align: left;
+   }  
+}
+#container #leadArea .wrap .text p a {
+   @include mq-sp() {
+    text-decoration: underline;
+   }  
+}
+
+/* =========================================================
+TextArea
+========================================================= */
+#container .TextArea h2 {
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: normal;
+   @include mq-sp() {
+    font-size: 19px;
+    margin-bottom: 16px;
+    line-height: 1.8;
+   }
+}
+
+#container .TextArea p {
+  margin-bottom: 25px;
+  line-height: 1.9;
+  color: #555555;
+  @include mq-sp() {
+    font-size: 13px;
+    line-height: 1.76;
+  }
+}
+
+#container .TextArea p .name {
+  font-weight: 700;
+  color: #000;
+}
+
+/* =========================================================
+TextArea01
+========================================================= */
+#container #TextArea01 {
+  background: url(/brand/am6/interview/01/images/img_01.png) center top no-repeat #fbf4f6;
+  height: 750px;
+  position: relative;
+  width: 100%;
+  @include mq-sp() {
+    position: relative;
+    height: auto;
+    padding-top: 30px;
+    background: url(/brand/am6/interview/01/images/sp/img_01.png);
+    background-size: cover;
+    &::after {
+      content: "";
+      display: block;
+      max-width: 375px;
+      height: 261px;
+      margin: -10px auto 0;
+      background: url(/brand/am6/interview/01/images/sp/img_01_2.png) center bottom no-repeat; 
+      background-size: 375px 261px;
+    }
+  } 
+}
+
+#container #TextArea01 .wrap {
+  width: 820px;
+  height: 750px;
+  margin: 0 auto;
+  position: relative;
+  @include mq-sp() {
+    width: 100%;
+    height: auto;
+    padding: 0 18px;
+  }  
+}
+
+#container #TextArea01 .wrap .text {
+  width: 500px;
+  height: 500px;
+  text-align: left;
+  position: absolute;
+  top:105px;
+  left:50%;
+  margin-left: -525px;
+     @include mq-sp() {
+      width: 100%;
+      height: auto;
+      position: static;
+      margin-left: 0;     
+    }   
+}
+
+#container #TextArea01 .wrap .text h2 {
+  display: inline-block;
+}
+
+#container #TextArea01 .wrap .text .text01 {
+  font-weight: 700;
+  color: #000;
+  @include mq-sp() {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+TextArea02
+========================================================= */
+#container #TextArea02 {
+  padding: 100px 0 100px;
+    @include mq-sp() {
+      padding: 0;
+    }
+}
+
+#container #TextArea02 .wrap {
+  width: 820px;
+  margin:0 auto;
+    @include mq-sp() {
+      width: 100%;
+    }    
+}
+
+/* =========================================================
+TextArea03
+========================================================= */
+#container #TextArea03 {
+  position: relative;
+  height: 700px;
+  background:url(/brand/am6/interview/01/images/img_02.png) center center no-repeat;
+  background-size: cover;
+  @include mq-sp() {
+    height: auto;
+    background:url(/brand/am6/interview/01/images/sp/img_02.png) center center no-repeat;
+    background-size: cover;    
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+      background:url(/brand/am6/interview/01/images/sp/img_02_2.png) center center no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+#container #TextArea03 .wrap {
+  height: 700px;
+  @include mq-sp() {
+    height: 375px;
+  }  
+}
+
+#container #TextArea03 .wrap .text {
+  width: 50%;
+  height: 700px;
+  display:table;
+  margin-left: 50%;
+    @include mq-sp() {
+      width: 100%;
+      height: 375px;
+      margin-left: 0;
+    }    
+}
+
+#container #TextArea03 .wrap .text h2 {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  @include mq-sp() {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
+
+/* =========================================================
+TextArea04
+========================================================= */
+#container #TextArea04 {
+  height: 700px;
+  background:url(/brand/am6/interview/01/images/img_03.png) center center no-repeat;
+  position: relative;
+  background-size: cover;
+  @include mq-sp() {
+    height: auto;
+    background:url(/brand/am6/interview/01/images/sp/img_03.png) center center no-repeat;
+    position: relative;
+    background-size: cover;
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+      background:url(/brand/am6/interview/01/images/sp/img_03_2.png) center center no-repeat;
+      background-size: cover;
+    }    
+  }
+}
+
+#container #TextArea04 .wrap {
+  width: 50%;
+  height: 700px;
+  position: absolute;
+  top:0;
+  display:table;
+    @include mq-sp() {
+      position: static;
+      width: 100%;
+      height: 100%;
+      padding: 30px 18px 20px;
+    }    
+}
+
+#container #TextArea04 .wrap .text {
+  height: 700px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+    @include mq-sp() {
+      height: 100%;
+    }    
+
+}
+
+
+#container #TextArea04 .wrap .text .textWrap {
+  text-align: left;
+  color: #fff;
+  width: 460px;
+  display: inline-block;
+     @include mq-sp() {
+      width: 100%;
+    }     
+}
+
+#container #TextArea04 .wrap .text .textWrap > p {
+     @include mq-sp() {
+      margin-bottom: 15px;
+    }     
+}
+
+/* =========================================================
+TextArea05
+========================================================= */
+#container #TextArea05 {
+  padding: 100px 0 100px 0;
+  @include mq-sp() {
+    padding: 30px 0 15px;
+  }      
+}
+
+#container #TextArea05 .wrap {
+  width: 820px;
+  margin:0 auto;
+  position: relative;
+    @include mq-sp() {
+      width: 100%;
+      padding: 0 18px;
+    }      
+}
+
+#container #TextArea05 .wrap h2 {
+  width: 330px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -450px;
+    @include mq-sp() {
+      position: static;
+      left: 0;
+      width: 100%;
+      margin-left: 0;
+    }      
+}
+
+#container #TextArea05 .wrap .text {
+  width: 476px;
+  float: right;
+  margin-bottom: 70px;
+  @include mq-sp() {
+    width: 100%;
+    float: none;
+    margin-bottom: 30px;
+
+  }
+}
+
+#container #TextArea05 .wrap .text p {
+  @include mq-sp() {
+    margin-bottom: 12px;
+  }
+}
+
+#container #TextArea05 .wrap .text + .wow {
+     @include mq-sp() {
+      padding: 0 20px;
+    }     
+}
+
+
+
+/* =========================================================
+TextArea06
+========================================================= */
+#container #TextArea06 {
+  background: url(/brand/am6/interview/01/images/img_05.png) center top no-repeat;
+  background-size: cover;
+  height: 780px;
+  position: relative;
+  width: 100%;
+  @include mq-sp() {
+  height: auto;
+  background: url(/brand/am6/interview/01/images/sp/img_05.png) center top no-repeat;
+  background-size: cover;  
+  padding-bottom: 20px;
+  }
+}
+
+#container #TextArea06 .wrap {
+  width: 820px;
+  margin:0 auto;
+    @include mq-sp() {
+      width: 100%;
+      padding: 0 18px;      
+    }  
+}
+
+#container #TextArea06 .wrap .text {
+  position: relative;
+}
+#container #TextArea06 .wrap .text p {
+  @include mq-sp() {
+    margin-bottom: 15px;
+  }
+}
+ 
+#container #TextArea06 .wrap .text h2 {
+  padding-top: 90px;
+  text-align: center;
+   @include mq-sp() {
+    padding-top: 30px;
+    text-align: left;
+   }
+}
+
+/* =========================================================
+TextArea07
+========================================================= */
+#container #TextArea07 {
+  padding: 80px 0 100px 0;
+  @include mq-sp() {
+    padding: 35px 0 0;
+  }
+}
+
+#container #TextArea07 .wrap {
+  width: 820px;
+  margin:0 auto;
+    @include mq-sp() {
+      width: 100%;
+      padding: 0 38px;
+    }    
+}
+
+#container #TextArea07 .wrap .text img {
+  margin-top: 40px;
+  @include mq-sp() {
+    margin-top: 0;
+  }  
+}
+
+#container #TextArea07 .wrap .text .imageArea {
+  position: relative;
+  @include mq-sp() {
+    margin-bottom: 36px;
+  }
+}
+
+#container #TextArea07 .wrap .text .imageArea .text {
+  position: absolute;
+  top:40px;
+  right: -70px;
+    @include mq-sp() {
+      top: 15px;
+      right: -31px;
+      width: 147px;
+    } 
+}
+#container #TextArea07 .wrap .text p {
+  @include mq-sp() {
+    margin-bottom: 36px;
+  }
+}
+/* =========================================================
+TextArea08
+========================================================= */
+#container #TextArea08 {
+  background: url(/brand/am6/interview/01/images/img_09.png) center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 520px;
+  display: table;
+  @include mq-sp() {
+    height: 189px;
+  }
+}
+
+#container #TextArea08 .wrap {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#container #TextArea08 .wrap .text h2 {
+  text-align: center;
+  @include mq-sp() {
+    margin: 0;
+    font-size: 14px;
+  }
+
+}
+
+/* =========================================================
+TextArea09
+========================================================= */
+#container #TextArea09 {
+  padding: 70px 0 35px 0;
+  @include mq-sp() {
+    padding: 30px 0 0;
+  }
+}
+
+#container #TextArea09 .wrap {
+  width: 820px;
+  margin:0 auto;
+  @include mq-sp() {
+    width: 100%;
+    padding: 0 18px;
+  }    
+}
+
+#container #TextArea09 .wrap .text p {
+  margin-bottom: 12px;
+}
+
+#container #TextArea09 .wrap .text .text04 {
+  color: #000;
+  font-weight: bold;
+}
+
+/* =========================================================
+profileArea
+========================================================= */
+#container #profileArea {
+  background: url(../images/bg_01.png) center bottom no-repeat;
+  background-size: contain;
+  padding-bottom: 120px;
+  padding-top: 65px;
+  @include mq-sp() {
+    padding: 30px 0 35px;
+  }
+}
+
+#container #profileArea .wrap {
+  width:820px;
+  margin: 0 auto;
+     @include mq-sp() {
+      width: 100%;
+    }   
+}
+
+#container #profileArea .wrap .profile {
+  width:820px;
+  height: 218px;
+  background: url(/brand/am6/interview/01/images/profile.png);
+  box-sizing:border-box;
+  padding: 45px 34px 0 265px;
+    @include mq-sp() {
+      width: 100%;
+      max-width: 335px;
+      height: 225px;
+      margin: 0 auto;
+      background: url(/brand/am6/interview/01/images/sp/profile.png);
+      background-size: 335px 225px;
+      padding: 15px 0 0 118px;
+    }    
+}
+
+#container #profileArea .wrap .profile h2 {
+  font-size: 22px;
+  font-weight: 700;
+  @include mq-sp() {
+    margin-bottom: -8px;
+    font-size: 15px;
+  }
+}
+
+#container #profileArea .wrap .profile h2 span {
+  font-size: 16px;
+}
+
+#container #profileArea .wrap .profile .title {
+  font-size: 12px;
+  @include mq-sp() {
+    font-size: 11px;
+  }
+}
+
+#container #profileArea .wrap .profile p {
+  margin-top: 13px;
+  font-size: 14px;
+  @include mq-sp() {
+    font-size: 12px;
+    line-height: 1.76;
+    color: #555;
+  }
+}
+
+#container #profileArea .wrap .profile p a {
+  color: #555;
+  text-decoration: underline;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+#container #profileArea .wrap .img {
+  margin-left: -20px;
+  margin-bottom: 40px;
+  @include mq-sp() {
+    margin-left: 0;
+    padding: 0 38px;
+  }
+}
+
+
+/* -----------------------------------------------------------------------------------
+footer
+------------------------------------------------------------------------------------ */
+
+.interview_sns{
+    width: 830px;
+    text-align:left;
+    margin: 0 auto;
+    position: relative;
+    padding:23px 0 0 0 ;
+      @include mq-sp() {
+      width: 110px;
+      margin: 0 auto;
+    }    
+}
+.interview_sns .fb-share-button{
+    width: 120px;
+    position: absolute;
+    top: 20px;
+    left: 80px;
+}
+
+.footer .foot_interview_wrap{
+    background: url(/common/img/foot_bg.jpg);
+    padding:80px 0 110px 0;
+    @include mq-sp() {
+      padding: 30px 0 35px;
+    }
+}
+.footer .foot_interview{
+    background: url(/common/img/foot_title.png) no-repeat top center;
+    width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 47px 0 0 0;
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+    @include mq-sp() {
+      width: 100%;
+      height: auto;
+      padding: 47px 10px 0;
+      background: url(/common/img/sp/foot_title.png) no-repeat top center;
+      background-size: 375px 15px;
+      background-position: top center;
+    }  
+}
+
+.footer .foot_interview p{
+    float: left;
+    @include mq-sp() {
+      width: 50%;
+    }
+}

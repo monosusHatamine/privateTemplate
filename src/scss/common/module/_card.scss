@@ -1,0 +1,262 @@
+@charset "utf-8";
+@import "../base/_variable";
+@import "../base/_mixin";
+@import "../base/_sprite";
+
+/* ==========================================================
+ card
+========================================================== */
+.card {
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    @include mq-pc() {
+      flex-direction: row;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ card-primary-column
+---------------------------------------------------------- */
+.card-primary-column {
+  position: relative;
+  max-width: 940px;
+  padding: 27px 20px;
+  margin-right: -20px;
+  margin-left: -20px;
+  text-align: left;
+  background-color: #cef1ff;
+  @include mq-pc() {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 47px 40px;
+  }
+  &-title {
+    margin-bottom: 27px;
+    @include mq-pc() {
+      position: absolute;
+      bottom: 100%;
+      left: -2px;
+      margin-bottom: -6px;
+    }
+  }
+
+  .card-item-image {
+    margin-bottom: 15px;
+    @include mq-pc() {
+      width: 260px;
+      margin-bottom: 0;
+    }
+    .image {
+      margin-bottom: 5px;
+    }
+    .text {
+      font-size: 10px;
+    }
+  }
+  .card-item-detail {
+    @include mq-pc() {
+      flex: 1;
+      margin-left: 20px;
+    }
+    .title {
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: bold;
+      @include mq-pc() {
+        margin-top: -7px;
+        margin-bottom: 12px;
+      }
+    }
+    .text {
+      font-size: 11px;
+      @include mq-pc() {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ card-layout
+---------------------------------------------------------- */
+.card-layout {
+  @include mq-pc() {
+    display: flex;
+  }
+  .item {
+    display: table;
+    width: 100%;
+    &:not(:last-child) {
+      border-bottom: 1px solid #fff;
+      @include mq-pc() {
+        border-bottom: none;
+      }
+    }
+
+    @include mq-pc() {
+      display: block;
+    }
+    &:nth-child(odd) {
+      background-color: #e8f8ff;
+    }
+    &:nth-child(even) {
+      background-color: #c0e0e8;
+    }
+
+    &-image {
+      display: table-cell;
+      width: 119px;
+      @include mq-pc() {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    &-detail {
+      display: table-cell;
+      padding: 15px 10px;
+      text-align: left;
+      line-height: 1.5;
+      font-size: 10px;
+      vertical-align: middle;
+      @include mq-pc() {
+        display: block;
+        line-height: 2;
+      }
+    }
+    &-title {
+      font-weight: bold;
+      @include mq-pc() {
+        padding: 17px 10px 27px;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+    &-text {
+      @include mq-pc() {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ card-layout-primary
+---------------------------------------------------------- */
+.card-layout-primary {
+
+  .item-image {
+    position: relative;
+    &::before {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 22px;
+      height: 22px;
+      padding: 2px;
+      border-radius: 50%;
+      margin: 0 auto -11px;
+      font-size: 10px;
+      color: #fff;
+      background-color: #000;
+      @include mq-pc() {
+        width: 36px;
+        height: 36px;
+        padding: 3px;
+        margin-bottom: -18px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  //item-image number
+
+  @for $i from 1 through 6 {
+    .item:nth-child(#{$i}) {
+      .item-image {
+        &::before {
+          content: '#{$i}';
+        }
+      }
+    }
+  }
+
+  @include mq-sp() {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+      width: 33.33%;
+    }
+
+    .item-image {
+      display: block;
+      width: 100%;
+    }
+    .item-detail {
+      display: block;
+      min-height: 180px;
+      .item-title {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 11px;
+        line-height: 1.5;
+      }
+    }
+  }
+  + .caution {
+    font-size: 10px;
+    margin-top: 10px;
+    @include mq-pc() {
+      font-size: 12px;
+      text-align: left;
+    }
+  }
+
+}
+
+/* ----------------------------------------------------------
+ .card-layout-city
+---------------------------------------------------------- */
+.card-layout-city {
+  .item:nth-child(odd) {
+    background-color: #f0f0f0;
+  }
+  .item:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+}
+
+/* ----------------------------------------------------------
+ .card-layout-brown
+---------------------------------------------------------- */
+.card-layout-brown.card-layout {
+  .item {
+    border-bottom: none;
+    &:nth-child(odd) {
+      background-color: #f8f5ec;
+    }
+    &:nth-child(even) {
+      background-color: #f0eee8;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ .card-layout-green
+---------------------------------------------------------- */
+.card-layout-green.card-layout {
+  .item {
+    border-bottom: none;
+    &:nth-child(odd) {
+      background-color: #f3f6e0;
+    }
+    &:nth-child(even) {
+      background-color: #ecf0d2;
+    }
+  }
+}

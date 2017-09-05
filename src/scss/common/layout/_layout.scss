@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import "../base/_variable";
+@import "../base/_mixin";
+@import "../base/_sprite";
+
+/* ==========================================================
+ layout
+========================================================== */
+
+.wrapper {
+  padding: 35px 10px 0;
+  margin-bottom: 60px;
+  @include mq-pc() {
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  &.wrapper-no-header {
+    @include mq-sp() {
+      padding-top: 0;
+    }
+    .breadcrumb .list {
+      @include mq-sp() {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+/* container
+----------------------------------------------------------- */
+.container {
+  margin: 0 auto;
+  &-primary {
+    max-width: 980px;
+  }
+}
+
+/* l-container
+----------------------------------------------------------- */
+.l-container {
+  width: 100%;
+  max-width: 1140px;
+  padding: 0 10px;
+  margin: 0 auto;
+  @include mq-pc() {
+    padding: 0;
+  }
+  &-column {
+    @include mq-pc() {
+      display: flex;
+    }
+  }
+}
+
+/* l-container-small
+----------------------------------------------------------- */
+.l-container-small {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 10px;
+  margin: 0 auto;
+  @include mq-pc() {
+    padding: 0;
+  }
+}
+
+/* layout-side
+----------------------------------------------------------- */
+.l-side {
+  width: 100%;
+  margin-bottom: 61px;
+  @include mq-pc() {
+    width: 240px;
+  }
+}
+
+/* layout-content
+----------------------------------------------------------- */
+.l-content {
+  width: 100%;
+  @include mq-pc() {
+    width: 842px;
+    margin-left: auto;
+  }
+  &-form {
+    @include mq-pc() {
+      width: 800px;
+    }
+  }
+}

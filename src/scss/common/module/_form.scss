@@ -1,0 +1,744 @@
+@charset "utf-8";
+@import "../base/_variable";
+@import "../base/_mixin";
+@import "../base/_sprite";
+
+/* ==========================================================
+ form
+========================================================== */
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+  &:checked {
+    + .form-checkbox {
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  &:checked {
+    + .form-radio {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.form-checkbox,
+.form-radio {
+  &::before,
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+
+/* form-cmn
+---------------------------------------------------------- */
+
+.form-cmn {
+  max-width: $width-contents;
+  margin: 0 auto;
+  @include mq-pc() {
+    padding: 17px 0 80px;
+  }
+
+  .point {
+    color: #af1818;
+  }
+}
+
+/* form-flow
+---------------------------------------------------------- */
+.form-flow {
+  text-align: center;
+  @include mq-pc() {
+    text-align: left;
+  }
+
+  &.l-side {
+    @include mq-sp() {
+      margin-bottom: 0;
+    }
+  }
+
+  .title {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    @include mq-pc() {
+      font-size: 20px;
+    }
+  }
+
+  .text,
+  .text-caution {
+    margin-bottom: 35px;
+    @include mq-pc() {
+      font-size: 13px;
+      font-weight: bold;
+    }
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @include mq-pc() {
+      flex-direction: column;
+    }
+  }
+
+  .item {
+    flex: 1;
+    font-size: 12px;
+    position: relative;
+    font-weight: bold;
+    color: $color-primary;
+    opacity: .7;
+
+    @include mq-pc() {
+      flex: none;
+      padding-left: 18px;
+      &:not(:first-child) {
+        margin-top: 25px;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+    }
+
+    &::before {
+      display: none;
+      @include mq-pc() {
+        top: 100%;
+        left: 0;
+        display: block;
+        width: 2px;
+        height: calc(100% + 15px);
+        margin-top: -7px;
+        margin-left: 4px;
+        background-color: $color-primary;
+      }
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-left: 1px solid;
+      border-bottom: 1px solid;
+      margin-top: auto;
+      margin-bottom: auto;
+      transform: rotate(228deg);
+      opacity: 1;
+
+      @include mq-pc() {
+        left: 0;
+        right: auto;
+        border: 2px solid;
+        border-radius: 50%;
+        transform: none;
+      }
+    }
+
+    &:nth-child(2) {
+      &::after {
+        right: -7px;
+      }
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+      &::after {
+        display: none;
+        @include mq-pc() {
+          display: block;
+        }
+      }
+    }
+
+    &.is-current {
+      color: $color-primary;
+      opacity: 1;
+      &::after {
+        @include mq-pc() {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+/* form-flow
+---------------------------------------------------------- */
+.form-flow {
+  .list-large .item {
+    &::after {
+      right: -23px;
+      @include mq-land() {
+        right: -90px;
+      }
+    }
+  }
+
+  .list-shop .item {
+    @include mq-sp() {
+
+      &::after {
+        margin-top: 7px;
+      }
+
+      &:nth-child(1) {
+        &::after {
+          margin-right: -9px;
+        }
+      }
+    }
+  }
+}
+
+/* form-content
+---------------------------------------------------------- */
+
+.form-content {
+  .image {
+    margin-bottom: 15px;
+    &-thanks {
+      max-width: 230px;
+      margin-right: auto;
+      margin-left: auto;
+      @include mq-pc() {
+        max-width: 382px;
+      }
+    }
+  }
+
+  &-text {
+    text-align: center;
+    font-size: 10px;
+    @include mq-pc() {
+      font-size: 16px;
+    }
+  }
+
+  .btn-cmn {
+    margin-top: 25px;
+    @include mq-pc() {
+      margin-top: 40px;
+    }
+  }
+
+  //centered
+  &-centered {
+    @include mq-pc() {
+      margin: 0 auto;
+    }
+  }
+}
+
+
+/* form-complete
+---------------------------------------------------------- */
+.form-complete {
+  @include mq-pc() {
+    margin-left: 108px;
+  }
+  .btn-form {
+    @include mq-pc() {
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/* form-flow-table
+---------------------------------------------------------- */
+.form-flow-table {
+  .text {
+    @include mq-pc() {
+      line-height: 1.7;
+    }
+  }
+}
+
+/* form-content-table
+---------------------------------------------------------- */
+.form-content-table {
+  margin: 0 -15px;
+  @include mq-pc() {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+/* form-text
+---------------------------------------------------------- */
+.form-text,
+%form-text {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f4f4f4;
+  @include mq-pc() {
+    padding: 18px;
+  }
+}
+
+.form-text-small {
+  @include mq-pc() {
+    max-width: 250px;
+  }
+}
+
+/* form-textarea
+---------------------------------------------------------- */
+.form-textarea {
+  @extend %form-text;
+
+  &.text-area-height {
+    height: 170px;
+    @include mq-pc() {
+      height: 230px;
+    }
+  }
+}
+
+/* form-checkbox
+---------------------------------------------------------- */
+.form-checkbox-wrap {
+  @include mq-pc() {
+    padding-bottom: 10px;
+  }
+  + .form-textarea {
+    margin-top: 10px;
+  }
+}
+
+.form-checkbox {
+  position: relative;
+  padding-left: 1.5em;
+  letter-spacing: -.04em;
+  @include mq-pc() {
+    padding-left: 2em;
+  }
+
+  + .form-textarea {
+    margin-top: 10px;
+  }
+
+  &::before {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #b5b5b5;
+    border-radius: 3px;
+    @include mq-pc() {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &::after {
+    display: none;
+    top: -3px;
+    width: 10px;
+    height: 5px;
+    border-left: 2px solid #555;
+    border-bottom: 2px solid #555;
+    transform: rotate(-45deg);
+    @include mq-pc() {
+      margin-left: 3px;
+    }
+  }
+}
+
+/* form-checkbox-primary
+---------------------------------------------------------- */
+.form-checkbox-primary {
+  position: relative;
+}
+
+/* form-raido
+---------------------------------------------------------- */
+
+.form-radio-wrap {
+  .radio-box {
+    display: inline-block;
+    margin-bottom: 10px;
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+}
+
+.form-radio {
+  position: relative;
+  padding-left: 1.7em;
+  @include mq-pc() {
+    padding-left: 2em;
+  }
+
+  &::before {
+    width: 15px;
+    height: 15px;
+    border: 2px solid $color-primary;
+    border-radius: 50%;
+    @include mq-pc() {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &::after {
+    display: none;
+    left: 4px;
+    width: 7px;
+    height: 7px;
+    margin: auto;
+    border-radius: 50%;
+    background-color: $color-primary;
+    @include mq-pc() {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+/* form-select
+---------------------------------------------------------- */
+.form-select-wrap {
+  @include mq-pc() {
+    @include clearfix();
+    margin-top: 10px;
+  }
+}
+.form-select-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  @include mq-pc() {
+    float: left;
+    max-width: 230px;
+  }
+  & + & {
+    margin-top: 3px;
+    @include mq-pc() {
+      float: right;
+      margin-top: 0;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 5px;
+    right: 10px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 3px solid transparent;
+    border-top: 6px solid $color-primary;
+    @include mq-pc() {
+      border-width: 5px;
+      border-top-width: 8px;
+    }
+  }
+}
+
+.form-select {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid $color-primary;
+  border-radius: 3px;
+  font-size: 12px;
+  background-color: transparent;
+  @include mq-pc() {
+    font-size: 14px;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+/* mod-category-search
+---------------------------------------------------------- */
+.mod-category-search-wrap {
+  margin: 0 -20px 25px;
+  background-color: #fafafa;
+  @include mq-pc() {
+    width: 100%;
+    margin: 0 auto 40px;
+  }
+}
+
+.mod-category-search {
+  display: flex;
+  max-width: 1140px;
+  padding: 10px 20px 10px 17px;
+  @include mq-pc() {
+    align-items: center;
+    padding: 0;
+  }
+
+  .mod-category-search-item {
+    @include mq-land() {
+      width: 100%;
+    }
+  }
+
+  .mod-category-search-item-list {
+    @include mq-pc() {
+      width: 70%;
+    }
+  }
+
+  .category-list {
+    @include clearfix();
+    margin-right: 3px;
+    margin-left: 3px;
+
+    @include mq-land() {
+      display: flex;
+      justify-content: center;
+    }
+
+    .category-list-item {
+      float: left;
+      width: 50%;
+      max-width: 240px;
+      padding-right: 3px;
+      padding-left: 3px;
+      margin-bottom: 6px;
+
+      @include mq-pc() {
+        max-width: none;
+        width: 30.6%;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-right: 13px;
+        margin-bottom: 0;
+      }
+
+      @include mq-land() {
+        margin-bottom: 0;
+      }
+
+      + .form-select-item {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        width: 26px;
+        height: 16px;
+        top: 0;
+        border: none;
+        background-image: url(/common/img/icon/ico_arrow_bottom_05_sp.png);
+        @include mq-pc() {
+          width: 23px;
+          height: 13px;
+          right: 20px;
+          background-image: url(/common/img/icon/ico_arrow_bottom_05_pc.png);
+          background-size: auto auto;
+        }
+      }
+    }
+
+    .category-list-item-select {
+      position: relative;
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 13px;
+        height: 8px;
+        content: '';
+        margin: auto 10px auto auto;
+        background: url(/common/img/icon/ico_arrow_bottom_05_sp.png) no-repeat;
+        background-size: 13px 8px;
+        @include mq-pc() {
+          width: 23px;
+          height: 13px;
+          margin-right: 20px;
+          background-image: url(/common/img/icon/ico_arrow_bottom_05_pc.png);
+          background-size: 23px 13px;
+        }
+      }
+    }
+
+    //select
+    .form-select {
+      border-radius: 0;
+      color: #fff;
+      background-color: $color-primary;
+      @include mq-pc() {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        transition: opacity .3s ease;
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      option {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+
+  &-item-reset {
+    align-self: center;
+    width: 45px;
+    margin-left: auto;
+    @include mq-pc() {
+      margin-top: 7px;
+      margin-right: 4px;
+    }
+
+    @include mq-land() {
+      text-align: right;
+    }
+
+    .form-reset {
+      font-weight: bold;
+      font-size: 10px;
+      min-width: 40px;
+      @include mq-pc() {
+        transition: opacity .3s ease;
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      &::before {
+        width: 16px;
+        height: 19px;
+        content: '';
+        display: block;
+        margin: 0 auto 4px;
+        background-image: url(/common/img/icon/ico_reset_01_sp.png);
+        background-size: 16px 19px;
+        @include mq-pc() {
+          width: 14px;
+          height: 18px;
+          background-image: url(/common/img/icon/ico_reset_01_pc.png);
+          background-size: auto auto;
+        }
+      }
+    }
+  }
+}
+
+/* mod-category-search-checkbox
+---------------------------------------------------------- */
+.mod-category-search-checkbox {
+
+  @include mq-pc() {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 70px;
+  }
+
+  .category-list {
+    .category-list-item {
+      width: 100%;
+      text-align: left;
+    @include mq-pc() {
+      width: auto;
+    }
+
+      &:not(:last-child) {
+        margin-right: 7px;
+        @include mq-pc() {
+          margin-right: 0;
+        }
+      }
+
+      @include mq-sp() {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @include mq-pc() {
+        margin-left: 45px;
+      }
+
+    }
+  }
+
+  input[type="checkbox"]:checked + .form-checkbox::before {
+    background-color: $color-primary;
+  }
+
+
+  //checkbox
+  .form-checkbox {
+    padding-left: 1.5em;
+    font-size: 12px;
+    @include mq-pc() {
+      padding-left: 3em;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &::before {
+      width: 16px;
+      height: 16px;
+      border: 1px solid $color-primary;
+      border-radius: 50%;
+      @include mq-pc() {
+        width: 24px;
+        height: 24px;
+        border-width: 2px;
+      }
+    }
+    
+    &::after {
+      border-color: #fff;
+      @include mq-sp() {
+        left: 3px;
+      }
+      @include mq-pc() {
+        left: 2px;
+        width: 15px;
+        height: 7px;
+      }
+    }
+  }
+
+  //reset
+  .form-reset {
+    &::before {
+      @include mq-pc() {
+        width: 20px;
+        height: 25px;
+        background-image: url(/common/img/icon/ico_reset_03_pc.png);
+        background-size: auto auto;
+      }
+    }
+  }
+}

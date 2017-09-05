@@ -1,0 +1,16 @@
+@charset "utf-8";
+@import "../base/_variable";
+@import "../base/_mixin";
+@import "../base/_sprite";
+
+/* ==========================================================
+ link
+========================================================== */
+.link-cmn {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+    transition: none;
+  }
+}

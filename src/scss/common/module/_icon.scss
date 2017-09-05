@@ -1,0 +1,466 @@
+@charset "utf-8";
+
+@import "../base/_variable";
+@import "../base/_sprite";
+@import "../base/_mixin";
+
+
+/* ==========================================================
+ icon
+========================================================== */
+
+@mixin icon($target: null) {
+  position: relative;
+  &::#{$target} {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.icon {
+  &.icon-vertical {
+    &::before,
+    &::after {
+      position: relative;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+
+
+/* ico-search-green
+---------------------------------------------------------- */
+.ico-search-green {
+  &.icon {
+    @include icon(before);
+    padding-left: 1.5em;
+  }
+
+  &::before {
+    left: 0;
+    background-image: url(/common/img/icon/ico_search_01_sp.png);
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+
+    @include mq-pc() {
+      background-image: url(/common/img/icon/ico_search_01_pc.png);
+      width: 18px;
+      height: 18px;
+      background-size: auto auto;
+    }
+  }
+}
+
+/* ico-arrow-bottom
+---------------------------------------------------------- */
+.ico-arrow-bottom {
+  &.icon {
+    @include icon(before);
+    padding-left: 1.5em;
+  }
+
+  &::before {
+    left: 0;
+    background-image: url(/common/img/icon/ico_arrow_bottom_03_sp.png);
+    width: 12px;
+    height: 8px;
+    background-size: contain;
+
+    @include mq-pc() {
+      background-image: url(/common/img/icon/ico_arrow_bottom_03_pc.png);
+      background-position: 0 0;
+      width: 14px;
+      height: 9px;
+      background-size: auto auto;
+    }
+  }
+}
+
+/* ico-arrow-left
+---------------------------------------------------------- */
+.ico-arrow-left {
+  &.icon {
+    @include icon(before);
+    padding-left: 1.5em;
+  }
+
+  &::before {
+    left: 0;
+    background-image: url(/common/img/icon/ico_arrow_left_02_sp.png);
+    width: 14px;
+    height: 13px;
+    background-size: contain;
+
+    @include mq-pc() {
+      background-image: url(/common/img/icon/ico_arrow_left_02_pc.png);
+      background-position: 0 0;
+      width: 22px;
+      height: 20px;
+      background-size: auto auto;
+    }
+  }
+}
+
+/* ico-arrow-left
+---------------------------------------------------------- */
+.ico-arrow-left-primary {
+  &.icon {
+    @include icon(before);
+    padding-left: 1.5em;
+  }
+
+  &::before {
+    left: 0;
+    width: 23px;
+    height: 21px;
+    background: url(/common/img/icon/ico_arrow_left_04_sp.png) no-repeat;
+    background-size: 23px 21px;
+  }
+}
+
+/* ico-arrow-right
+---------------------------------------------------------- */
+
+.ico-arrow-right {
+  &.icon {
+    @include icon(after);
+  }
+
+  &::after {
+    right: 0;
+    width: 14px;
+    height: 13px;
+    background: url(/common/img/icon/ico_arrow_right_02_sp.png) no-repeat;
+    background-size: 14px 13px;
+    @include mq-pc() {
+      width: 22px;
+      height: 20px;
+      background-image: url(/common/img/icon/ico_arrow_right_02_pc.png);
+      background-size: auto auto;
+    }
+  }
+}
+/* ico-arrow-right
+---------------------------------------------------------- */
+
+.ico-arrow-right-primary {
+  &.icon {
+    @include icon(after);
+  }
+  &::after {
+    right: 0;
+    width: 23px;
+    height: 21px;
+    background: url(/common/img/icon/ico_arrow_right_04_sp.png) no-repeat;
+    background-size: 23px 21px;
+  }
+}
+
+
+/* icon-renovation
+---------------------------------------------------------- */
+.icon-renovation {
+  @include icon(before);
+  padding-left: 2.3em;
+  @include mq-pc() {
+    padding-left: 3.3em;
+  }
+  &::before {
+    left: 0;
+    width: 18px;
+    height: 16px;
+    background: url(/common/img/icon/ico_renovation_01_sp.png) no-repeat;
+    background-size: 18px 16px;
+    @include mq-pc() {
+      width: 30px;
+      height: 28px;
+      background-image: url(/common/img/icon/ico_renovation_01_pc.png);
+      background-size: auto;
+    }
+  }
+}
+.mod-icon-renovation {
+  display: inline-block;
+  margin-right: 20px;
+  img {
+    width: 24px;
+    height: auto;
+    margin-right: 9px;
+    vertical-align: sub;
+    @include  mq-pc {
+      width: 32px;
+      height: 24px;
+      margin-right: 9px;
+      vertical-align: top;
+    }
+  }
+}
+.mod-icon-house {
+  img {
+    width: 20px;
+    height: 18px;
+    vertical-align: sub;
+    margin-right: 9px;
+    @include  mq-pc {
+      width: 27px;
+      height: 24px;
+      margin-right: 9px;
+      vertical-align: top;
+    }
+  }
+}
+
+/* icon-renovation-small
+---------------------------------------------------------- */
+//.icon-renovation-small {
+//  @include icon(before);
+//  padding-left: 2em;
+//  &::before {
+//    left: 0;
+//    @include sprite($ico-renovation-02-pc);
+//  }
+//}
+
+/* icon-building
+---------------------------------------------------------- */
+.icon-building {
+  @include icon(before);
+  padding-left: 2.7em;
+  @include mq-pc() {
+    padding-left: 3.5em;
+  }
+  &::before {
+    width: 24px;
+    height: 18px;
+    left: 0;
+    background: url(/common/img/icon/ico_building_01_sp.png) no-repeat;
+    background-size: 24px 18px;
+    @include mq-pc() {
+      width: 34px;
+      height: 24px;
+      background: url(/common/img/icon/ico_building_01_pc.png) no-repeat;
+      background-size: auto auto;
+    }
+  }
+}
+
+/* icon-item
+---------------------------------------------------------- */
+.icon-item {
+  @include icon(before);
+  &::before {
+    width: 18px;
+    height: 14px;
+    left: 0;
+    background: url(/common/img/icon/ico_item_01_pc.png) no-repeat;
+    background-size: 18px 14px;
+    @include mq-pc() {
+      width: 26px;
+      height: 22px;
+      background-image: url(/common/img/icon/ico_item_01_pc.png);
+      background-size: auto auto;
+    }
+  }
+}
+
+/* icon-building-small
+---------------------------------------------------------- */
+.icon-building-small {
+  @include icon(before);
+  padding-left: 2.5em;
+  &::before {
+    left: 0;
+    width: 23px;
+    height: 17px;
+    background: url(/common/img/icon/ico_building_02_pc.png) no-repeat;
+  }
+}
+
+
+/* icon-house
+---------------------------------------------------------- */
+.icon-house {
+  @include icon(before);
+  padding-left: 2.3em;
+  @include mq-pc() {
+    padding-left: 3.3em;
+  }
+  &::before {
+    left: 0;
+    width: 18px;
+    height: 16px;
+    background: url(/common/img/icon/ico_house_02_sp.png) no-repeat;
+    background-size: 18px 16px;
+    @include mq-pc() {
+      width: 30px;
+      height: 28px;
+      background-image: url(/common/img/icon/ico_house_03_pc.png);
+      background-size: auto;
+    }
+  }
+}
+
+/* icon-house-small
+---------------------------------------------------------- */
+.icon-house-small {
+  @include icon(before);
+  padding-left: 2.3em;
+  &::before {
+    width: 16px;
+    height: 15px;
+    left: 0;
+    background-image: url(/common/img/icon/ico_house_02_pc.png);
+    background-size: contain;
+  }
+}
+
+/* ico-doc
+---------------------------------------------------------- */
+.ico-doc {
+  @include icon(before);
+  width: 27px;
+  height: 34px;
+  @include mq-pc() {
+    width: 38px;
+    height: 47px;
+  }
+  &::before {
+    left: 0;
+    width: 27px;
+    height: 34px;
+    background: url(/common/img/icon/ico_doc_01_sp.png) no-repeat;
+    background-size: 27px 34px;
+    @include mq-pc() {
+      width: 38px;
+      height: 47px;
+      background-image: url(/common/img/icon/ico_doc_01_pc.png);
+      background-size: auto;
+    }
+  }
+}
+
+/* ico-mail
+---------------------------------------------------------- */
+.ico-mail {
+  @include icon(before);
+  width: 29px;
+  height: 23px;
+  @include mq-pc() {
+    width: 41px;
+    height: 34px;
+  }
+  &::before {
+    left: 0;
+    width: 29px;
+    height: 23px;
+    background: url(/common/img/icon/ico_mail_01_sp.png) no-repeat;
+    background-size: 29px 23px;
+    @include mq-pc() {
+      width: 41px;
+      height: 34px;
+      background-image: url(/common/img/icon/ico_mail_01_pc.png);
+      background-size: auto;
+    }
+  }
+}
+
+/* ico-tel
+---------------------------------------------------------- */
+.ico-tel {
+  @include icon(before);
+  width: 13px;
+  height: 18px;
+  margin-top: -4px;
+  margin-right: 12px;
+  @include mq-pc() {
+    width: 20px;
+    height: 26px;
+  }
+  &::before {
+    left: 0;
+    width: 13px;
+    height: 18px;
+    background: url(/common/img/icon/ico_tel_01_sp.png) no-repeat;
+    background-size: 13px 18px;
+    @include mq-pc() {
+      width: 20px;
+      height: 26px;
+      background-image: url(/common/img/icon/ico_tel_01_pc.png);
+      background-size: auto;
+    }
+  }
+}
+
+/* ico-arrow-bottom-01
+---------------------------------------------------------- */
+.ico-arrow-bottom-01 {
+  line-height: 0;
+  &.icon {
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    left: 0;
+    background: url(/common/img/icon/ico_arrow_bottom_06_sp.png) no-repeat 0 0;
+    width: 16px;
+    height: 8px;
+    background-size: 16px;
+
+  }
+}
+
+/* ico_mail_green
+---------------------------------------------------------- */
+.ico_mail_green {
+  line-height: 1;
+  @include mq-pc() {
+    margin-bottom: 12px;
+  }
+  &::before {
+    content: '';
+    display: inline-block;
+    left: 0;
+    background-image: url(/common/img/icon/ico_mail_green_sp.png);
+    width: 18px;
+    height: 14px;
+    background-size: contain;
+    @include mq-pc() {
+      background-image: url(/common/img/icon/ico_mail_green_pc.png);
+      width: 26px;
+      height: 20px;
+      background-size: auto;
+    }
+  }
+}
+
+/* ico-shop
+---------------------------------------------------------- */
+.ico-shop {
+  margin-right: 14px;
+  line-height: 1;
+  vertical-align: baseline;
+  &::before {
+    content: '';
+    display: inline-block;
+    left: 0;
+    background-image: url(/img/property/ico_shop_01_sp.png);
+    width: 18px;
+    height: 15px;
+    background-size: contain;
+    @include mq-pc() {
+      background-image: url(/img/property/ico_shop_01_pc.png);
+      width: 24px;
+      height: 20px;
+      background-size: auto;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import "../../../common/base/variable";
+@import "../../../common/base/sprite";
+@import "../../../common/base/mixin";
+
+/* ==========================================================
+ california top
+========================================================== */
+
+/* ----------------------------------------------------------
+ module
+---------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------
+ module
+---------------------------------------------------------- */
+.mod-box-house {
+  .box {
+    position: relative;
+    background-color: #f3f1e9;
+    padding: 20px;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .ttl {
+      
+    }
+    .box-separate {
+      border-top: 1px solid #fff;
+    }
+  }
+  .box-01 {
+    width: 100%;
+  }
+}
+

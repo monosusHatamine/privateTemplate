@@ -1,0 +1,23 @@
+@import "../base/_variable";
+@import "../base/_sprite";
+@import "../base/_mixin";
+/* ==========================================================
+ list
+========================================================== */
+
+.list-instagram {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.box-instagram {
+  width: calc(33.75% - 10px) ;
+  margin: 0 10px 10px 0;
+  position: relative;
+  &:nth-child(3n) {
+    margin: 0 0 10px 0;
+  }
+}

@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import "../base/_variable";
+@import "../base/_mixin";
+@import "../base/_sprite";
+
+/* ==========================================================
+ box
+========================================================== */
+
+.box-facebook {
+  overflow: hidden;
+  width: 100%;
+  height: 490px;
+  border: none;
+}
+
+@include mq-sp() {
+  .box-facebook {
+    display: block;
+    max-width: 320px;
+    margin: 25px auto 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+@import "../../common/base/variable";
+@import "../../common/base/sprite";
+@import "../../common/base/mixin";
+
+/* ==========================================================
+ product
+========================================================== */
+
+.wrapper-product {
+  .mod-content-wrap,
+  .mod-point,
+  .mod-content-layout,
+  .mod-content-price,
+  .mod-content-spec {
+    @include mq-pc() {
+      margin-bottom: 80px;
+    }
+  }
+
+  .mod-content-layout {
+    .ttl-logo {
+      @include mq-pc() {
+        margin-bottom: 130px;
+      }
+    }
+
+    &-image {
+      @include mq-pc() {
+        margin-bottom: 65px;
+      }
+    }
+  }
+}
+
+.mod-content-brand-title-brown {
+  width: 239px;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq-pc() {
+    width: auto;
+  }
+}
+
+/* ----------------------------------------------------------
+ module
+---------------------------------------------------------- */
+
+.mod-search-line-up {
+  background-color: #f4fbf7;
+  @include  mq-pc {
+    background-color: #fafafa;
+    padding: 0;
+  }
+}
+.mod-search-line-up a {
+  display: block;
+  margin: 0 auto;
+  width: 177px;
+  @include  mq-pc {
+    margin: 0 0 0 auto;
+    width: 240px;
+    padding: 29px 0 29px 0;
+    background-color: #f4fbf7;
+  }
+  picture {
+    display: block;
+    width: 161px;
+    height: 22px;
+    vertical-align: text-top;
+    @include  mq-pc {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ detail
+---------------------------------------------------------- */
+.mod-search-detail {
+  text-align: left;
+  .col {
+    .detail {
+      .title {
+        font-size: 14px;
+        margin-top: 33px;
+        margin-bottom: 8px;
+        font-weight: bold;
+        line-height: 2;
+        letter-spacing: 0.05em;
+        @include mq-sp() {
+          margin-top: 15px;
+          margin-bottom: 0;
+        }
+      }
+      .sub {
+        font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+        line-height: 1.4;
+        color: #999;
+        margin: 15px 0;
+        letter-spacing: 0.05em;
+
+        margin-top: 0;
+        font-size: 11px;
+        @include mq-pc() {
+          margin-bottom: 15px;
+        }
+      }
+      .text {
+        line-height: 2;
+        margin-bottom: 20px;
+        @include mq-pc() {
+          font-size: 14px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}

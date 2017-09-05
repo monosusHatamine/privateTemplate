@@ -1,0 +1,119 @@
+@charset "utf-8";
+@import "../base/_variable";
+@import "../base/_mixin";
+
+/* ==========================================================
+ grid
+========================================================== */
+
+.grid-cmn {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include mq-pc() {
+    flex-direction: row;
+  }
+  &.gutter {
+    margin-right: -10px;
+    margin-left: -10px;
+    @include mq-pc() {
+      margin-right: -30px;
+      margin-left: -30px;
+    }
+    .col {
+      padding-right: 10px;
+      padding-left: 10px;
+
+      @include mq-sp() {
+        width: 100%;
+      }
+      @include mq-pc() {
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+
+      > a {
+        display: block;
+      }
+    }
+  }
+
+  &.gutter-vertical {
+    @include mq-pc() {
+      margin-bottom: 60px;
+    }
+  }
+
+  &.grid-1 {
+    .col {
+      @include mq-pc() {
+        width: 100%;
+      }
+    }
+  }
+
+  &.grid-2 {
+    .col {
+      &:last-child {
+        margin-top: 25px;
+      }
+      @include mq-pc() {
+        width: 50%;
+        &:last-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  &.grid-3 {
+    .col {
+      margin-top: 25px;
+
+      &:first-child {
+        @include mq-sp() {
+          margin-top: 0;
+        }
+      }
+
+      @include mq-pc() {
+        width: 33.33%;
+        margin-top: 0;
+        &:nth-child(n + 4) {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+
+  &.grid-4 {
+    .col {
+      &:nth-child(n + 5) {
+        margin-top: 25px;
+      }
+
+      @include mq-pc() {
+        width: 25%;
+        &:nth-child(n + 5) {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}
+
+.grid-flex {
+  flex-direction: row;
+  &.grid-3 {
+    .col {
+      width: 33.33%;
+      margin-top: 0;
+    }
+  }
+  &.grid-2 {
+    .col {
+      width: 50%;
+      margin-top: 0;
+    }
+  }
+}

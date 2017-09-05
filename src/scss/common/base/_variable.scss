@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+// 変数を設定するファイル
+
+// font-family
+$family-base: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic,"ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$family-base-serif: "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "游明朝体", "Yu Mincho", YuMincho, serif;
+
+// font-size
+$font-size-base-pc: 16px;
+$font-size-base-sp: 15px;
+$font-size-notes: 10px;
+
+// line-height
+$line-base-pc: 1.5;
+$line-base-sp: 1.5;
+$line-text: 1.75;
+$line-none: 1.05;
+
+// color
+$color-primary: #11a14f;
+$color-secondary: #f4fbf7;
+$color-gray: #999;
+//$color-tertiary: #787878;
+//$theme-primary: #f4fbf7;
+
+// margin
+$margin-contents-sp: 12px;
+$margin-contents-in-sp: 20px;
+$margin-contents-in-pulus-sp: $margin-contents-sp + $margin-contents-in-sp;
+$margin-text: 30px;
+$margin-text-short: 4px;
+
+// grid margin
+$grid-margin-pc: 20px;
+$grid-margin-sp: 10px;
+
+// width
+$width-contents: 1140px;
+$width-contents-large: 1400px;
+$width-min-contents: 1000px;
+$width-contents-in: 880px;
+
+// grid width
+$grid-width-1: 8.33333333%;
+$grid-width-1-5: 14.2857143%;
+$grid-width-2: 16.66666667%;
+$grid-width-2-5: 20%;
+$grid-width-3: 25%;
+$grid-width-4: 33.33333333%;
+$grid-width-5: 41.66666667%;
+$grid-width-6: 50%;
+$grid-width-7: 58.33333333%;
+$grid-width-8: 66.66666667%;
+$grid-width-9: 75%;
+$grid-width-10: 83.33333333%;
+$grid-width-11: 83.33333333%;
+$grid-width-12: 100%;
+
+$grid-width-main: 700px;
+$grid-width-sub: 300px;

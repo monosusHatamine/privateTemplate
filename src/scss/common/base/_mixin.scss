@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import "variable";
+// メディアクエリー
+@mixin mq-sp {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mq-pc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mq-tb {
+  @media screen and (min-width: 768px) and (max-width: 1088px) {
+    @content;
+  }
+}
+
+@mixin mq-land {
+  @media screen and (orientation: landscape) and (max-width: 767px) {
+    @content;
+  }
+}
+
+//Retina用スプライト
+@mixin r-sprite-width($sprite) {
+  width: nth($sprite, 5) / 2;
+}
+@mixin r-sprite-height($sprite) {
+  height: nth($sprite, 6) / 2;
+}
+@mixin r-sprite-position($sprite) {
+  $sprite-offset-x: round(nth($sprite, 3)/2);
+  $sprite-offset-y: round(nth($sprite, 4)/2);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+  background-repeat: no-repeat;
+}
+
+@mixin r-sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url($sprite-image);
+}
+//background-sizeのmixinを新たに生成
+@mixin r-sprite-size($sprite) {
+  background-size: round(nth($sprite, 7)/2) round(nth($sprite, 8)/2);
+}
+@mixin r-sprite($sprite) {
+  @include r-sprite-image($sprite);
+  @include r-sprite-position($sprite);
+  @include r-sprite-width($sprite);
+  @include r-sprite-height($sprite);
+  @include r-sprite-size($sprite);
+}
+
+// ==========================================================
+// clearfix
+// ==========================================================
+@mixin clearfix() {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// ==========================================================
+// px to em
+// ==========================================================
+@function em($pixels, $fontSize: $font-size-base-pc) {
+
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  //remove 'px' string
+  @if (unitless($fontSize)) {
+    $fontSize: $fontSize * 1px;
+  }
+
+  @return $pixels / $fontSize * 1em;
+}

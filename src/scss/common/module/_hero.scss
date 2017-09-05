@@ -1,0 +1,420 @@
+@charset "utf-8";
+@import "../base/_variable";
+@import "../base/_mixin";
+@import "../base/_sprite";
+
+/* ----------------------------------------------------------
+ hero
+---------------------------------------------------------- */
+[class^="hero-"] {
+  @include mq-sp() {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-cmn
+---------------------------------------------------------- */
+.hero-cmn {
+  &-inner {
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-cmn-event
+---------------------------------------------------------- */
+.hero-cmn-event {
+  .image {
+    min-height: 263px;
+    background-image: url(/img/event/img_event_hero_01_sp.jpg);
+    @include mq-pc() {
+      min-height: 400px;
+      background-image: url(/img/event/img_event_hero_01_pc.jpg);
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-log-box
+---------------------------------------------------------- */
+.hero-logo-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 230px;
+  margin: 0 auto;
+  @include mq-pc() {
+    width: 500px;
+  }
+  text-align: center;
+  .image-logo {
+    margin: 0 auto 20px;
+
+    @include mq-pc() {
+      margin-bottom: 38px;
+    }
+  }
+  .text {
+    line-height: 1.7;
+    font-size: 14px;
+    font-weight: bold;
+    @include mq-pc() {
+      line-height: 2;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-log-box-event
+---------------------------------------------------------- */
+.hero-logo-box-event {
+  margin-top: 70px;
+  @include mq-pc() {
+    margin-top: 110px;
+  }
+  .image-logo {
+    width: 158px;
+    @include mq-pc() {
+      width: 298px;
+    }
+  }
+  .text {
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-parallax
+---------------------------------------------------------- */
+
+.hero-parallax {
+  position: relative;
+  margin-bottom: 54px;
+  @include mq-pc() {
+    &.is-fixed {
+      padding-top: 139px;
+    }
+  }
+  @include mq-tb() {
+    &.is-fixed {
+      padding-top: 223px;
+    }
+  }
+  @include mq-pc() {
+    margin-bottom: 75px;
+  }
+  .image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include mq-pc() {
+
+    }
+  }
+  .image-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .hero-link {
+    position: relative;
+    a {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin:0 auto 15px;
+      width: 27px;
+      height: 27px;
+      background: url(/common/img/icon/ico_scroll_hero_01.png) no-repeat;
+      background-size: 27px 27px;
+      @include mq-pc() {
+        width: 54px;
+        height: 54px;
+        margin-bottom: 30px;
+        background-size: auto auto;
+      }
+    }
+  }
+}
+
+.hero-parallax-california-top {
+  .image {
+    min-height: 304px;
+    background-image: url(/img/brand/california/img_california_top_01.jpg);
+    @include mq-pc() {
+      min-height: 560px;
+      background-image: none;
+    }
+  }
+  .image-logo {
+    width: 143px;
+    height: 65px;
+    @include mq-pc() {
+      width: 286px;
+      height: 130px;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-parallax-city
+---------------------------------------------------------- */
+.hero-parallax-city-top,
+%hero-parallax-city-top {
+  position: relative;
+  margin-bottom: 0;
+
+  .l-container {
+    position: relative;
+  }
+
+  .image {
+    min-height: 376px;
+    background-image: url(/img/product/city/img_city_hero_01_sp.jpg);
+    @include mq-pc() {
+      min-height: 728px;
+      background-image: none;
+    }
+  }
+  .image-logo {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    width: 131px;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    @include mq-pc() {
+      top: 0;
+      width: auto;
+      margin-top: -660px;
+    }
+  }
+  .image-logo-sub {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    width: 101px;
+    margin-bottom: -50px;
+    @include mq-pc() {
+      right: 0;
+      width: auto;
+      margin-right: auto;
+      margin-bottom: -87px;
+    }
+  }
+}
+
+.hero-parallax-beach-top {
+  @extend %hero-parallax-city-top;
+
+  .image {
+    background-image: url(/img/product/beach/img_beach_hero_01_sp.jpg);
+    @include mq-pc() {
+      min-height: 728px;
+      background-image: none;
+    }
+  }
+
+  .image-logo {
+
+    @include mq-pc() {
+      top: auto;
+      margin-left: -10px;
+      margin-bottom: 70px;
+    }
+  }
+
+  .image-logo-sub {
+    @include mq-pc() {
+      width: auto;
+      margin-bottom: -87px;
+    }
+  }
+  .ttl-beach-custom-01 {
+    position: absolute;
+    top: -250px;
+    right: 20px;
+    @include  mq-pc() {
+      top: -440px;
+      right: 180px;
+    }
+    span {
+      display: inline;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1.9;
+      background-color: #fff;
+      color: #80c0d8;
+      @include  mq-pc() {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.9;
+      }
+    }
+  }
+}
+
+.js-slider-item {
+  img {
+    width: 100%;
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-parallax-brown
+---------------------------------------------------------- */
+.hero-parallax-brown {
+
+  @include mq-pc() {
+    margin-bottom: 55px;
+  }
+  .image {
+    min-height: 375px;
+    background-image: url(/img/product/brown/img_brown_hero_01_sp.jpg);
+
+    @include mq-pc() {
+      min-height: 724px;
+      background-image: none;
+    }
+}
+  .image-logo {
+    width: 248px;
+    height: 109px;
+    @include mq-pc() {
+      width: 496px;
+      height: 218px;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-parallax-green
+---------------------------------------------------------- */
+.hero-parallax-green {
+
+  @include mq-pc() {
+    margin-bottom: 55px;
+  }
+  .image {
+    min-height: 375px;
+    background-image: url(/img/product/green/img_green_hero_01_sp.jpg);
+
+    @include mq-pc() {
+      min-height: 724px;
+      background-image: none;
+    }
+  }
+  .image-logo {
+    width: 248px;
+    height: 109px;
+    @include mq-pc() {
+      width: 496px;
+      height: 218px;
+    }
+  }
+}
+
+/* ----------------------------------------------------------
+ hero-parallax-am6
+---------------------------------------------------------- */
+.hero-parallax-am6 {
+  @include mq-pc() {
+    margin-bottom: 55px;
+  }
+   a {
+     display: block;
+   }
+  .image {
+    min-height: 375px;
+    background-image: url(/img/brand/am6/img_am6_hero_01_sp.png);
+
+    @include mq-pc() {
+      min-height: 560px;
+      background-image: none;
+    }
+  }
+  .image-logo-am6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 223px;
+    max-height: 204px;
+    text-align: center;
+    @include mq-pc() {
+      width: 446px;
+      max-height: 405px;
+    }
+  }
+  .image-logo-am6 .item-01 {
+    @include mq-sp() {
+      width: 70px;
+    }
+  }
+
+  .image-logo-am6 .item-02 {
+    @include mq-sp() {
+      width: 223px;
+    }
+  }
+
+  .image-logo-am6 .item-03 {
+    @include mq-sp() {
+      width: 120px;
+    }
+  }
+}
+
+.hero-brown {
+  margin: 0;
+  .image {
+    padding-top: 160%;
+    background-image: url("/img/product/brown/img_brown_hero_02_sp.jpg");
+    background-position: top center;
+    background-size: cover;
+    @include mq-pc() {
+      padding-top: 0;
+      min-height: 800px;
+      background-image: url("/img/product/brown/img_brown_hero_02_pc.jpg");
+      background-size: cover;
+    }
+  }
+}
+.hero-green {
+  margin: 0;
+  .image {
+    padding-top: 160%;
+    background-image: url("/img/product/green/img_green_hero_02_sp.jpg");
+    background-position: top center;
+    background-size: cover;
+    @include mq-pc() {
+      padding-top: 0;
+      min-height: 800px;
+      background-image: url("/img/product/green/img_green_hero_02_pc.jpg");
+      background-size: cover;
+    }
+  }
+}
+
