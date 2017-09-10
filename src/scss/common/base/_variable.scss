@@ -3,13 +3,14 @@
 // 変数を設定するファイル
 
 // font-family
-$family-base: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic,"ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$family-base: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
 $family-base-serif: "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "游明朝体", "Yu Mincho", YuMincho, serif;
+$web-font-01: 'Encode Sans Semi Condensed', sans-serif;
 
 // font-size
-$font-size-base-pc: 16px;
-$font-size-base-sp: 15px;
-$font-size-notes: 10px;
+$font-size-base-pc: 14px;
+$font-size-base-sp: 14px;
+$font-size-: 10px;
 
 // line-height
 $line-base-pc: 1.5;
@@ -20,20 +21,25 @@ $line-none: 1.05;
 // color
 $color-primary: #11a14f;
 $color-secondary: #f4fbf7;
-$color-gray: #999;
-//$color-tertiary: #787878;
-//$theme-primary: #f4fbf7;
+//$color-link: ;
+//$color-disabled: ;
+//$color-warning: ;
+//$color-error: ;
+
+// color text
+$color-text-primary: #252525;
+$color-link-text: #252525;
+//$color-disabled-text: ;
 
 // margin
-$margin-contents-sp: 12px;
-$margin-contents-in-sp: 20px;
-$margin-contents-in-pulus-sp: $margin-contents-sp + $margin-contents-in-sp;
-$margin-text: 30px;
-$margin-text-short: 4px;
+//$margin-contents-ssize:
 
 // grid margin
 $grid-margin-pc: 20px;
 $grid-margin-sp: 10px;
+
+//Break Point Size
+$break-point: 768px;
 
 // width
 $width-contents: 1140px;
@@ -59,3 +65,12 @@ $grid-width-12: 100%;
 
 $grid-width-main: 700px;
 $grid-width-sub: 300px;
+
+// ico
+$ico-width-sp: 10px;
+$ico-height-sp: 10px;
+$ico-width-pc: 10px;
+$ico-height-pc: 10px;
+
+//opacity
+$opacity-base: 0.7;

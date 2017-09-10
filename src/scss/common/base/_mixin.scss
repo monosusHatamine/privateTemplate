@@ -1,31 +1,35 @@
 @charset "utf-8";
 @import "variable";
+// ==========================================================
 // メディアクエリー
+// ==========================================================
 @mixin mq-sp {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $break-point + 1) {
     @content;
   }
 }
 
 @mixin mq-pc {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $break-point) {
     @content;
   }
 }
 
 @mixin mq-tb {
-  @media screen and (min-width: 768px) and (max-width: 1088px) {
+  @media screen and (min-width: $break-point) and (max-width: 1088px) {
     @content;
   }
 }
 
 @mixin mq-land {
-  @media screen and (orientation: landscape) and (max-width: 767px) {
+  @media screen and (orientation: landscape) and (max-width: $break-point + 1) {
     @content;
   }
 }
 
-//Retina用スプライト
+// ==========================================================
+// Retina用スプライト
+// ==========================================================
 @mixin r-sprite-width($sprite) {
   width: nth($sprite, 5) / 2;
 }
@@ -43,7 +47,10 @@
   $sprite-image: nth($sprite, 9);
   background-image: url($sprite-image);
 }
-//background-sizeのmixinを新たに生成
+
+// ==========================================================
+// background-sizeのmixinを新たに生成
+// ==========================================================
 @mixin r-sprite-size($sprite) {
   background-size: round(nth($sprite, 7)/2) round(nth($sprite, 8)/2);
 }
@@ -69,6 +76,64 @@
     clear: both;
   }
 }
+
+// ==========================================================
+// font size sp to pc
+// ==========================================================
+@mixin font-size-change-pc($fontSizeSp) {
+  @include mq-pc() {
+    font-size: $fontSizeSp + $fontSize * 1px
+  }
+}
+
+// ==========================================================
+// icon view
+// ==========================================================
+@mixin icon($iconImage) {
+  width: $ico-width-sp;
+  height: $ico-height-sp;
+  background-image: url($iconImage);
+  background-size: contain;
+  display: inline-block;
+  @include mq-pc() {
+    width: $ico-width-sp;
+    height: $ico-height-sp;
+  }
+}
+
+// ==========================================================
+// opacity hover
+// ==========================================================
+@mixin opacityHover {
+  &:hover {
+    opacity: $opacity-base;
+  }
+}
+// ==========================================================
+// text hover
+// ==========================================================
+@mixin textHover {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// ==========================================================
+//
+// ==========================================================
+
+// ==========================================================
+//
+// ==========================================================
+
+// ==========================================================
+//
+// ==========================================================
+
+// ==========================================================
+//
+// ==========================================================
 
 // ==========================================================
 // px to em
