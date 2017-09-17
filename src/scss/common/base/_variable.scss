@@ -4,7 +4,7 @@
 
 // font-family
 $family-base: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-$family-base-serif: "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "游明朝体", "Yu Mincho", YuMincho, serif;
+//$family-base-serif: "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "游明朝体", "Yu Mincho", YuMincho, serif;
 $web-font-01: 'Encode Sans Semi Condensed', sans-serif;
 
 // font-size
@@ -19,8 +19,8 @@ $line-text: 1.75;
 $line-none: 1.05;
 
 // color
-$color-primary: #11a14f;
-$color-secondary: #f4fbf7;
+//$color-primary: ;
+//$color-secondary: ;
 //$color-link: ;
 //$color-disabled: ;
 //$color-warning: ;
@@ -31,21 +31,27 @@ $color-text-primary: #252525;
 $color-link-text: #252525;
 //$color-disabled-text: ;
 
-// margin
-//$margin-contents-ssize:
-
-// grid margin
-$grid-margin-pc: 20px;
-$grid-margin-sp: 10px;
-
-//Break Point Size
-$break-point: 768px;
+// bg
+//$bg-color-primary: ;
+//$bg-color-secondary ;
+//$bg-image-primary: ;
+//$bg-image-secondary: ;
 
 // width
 $width-contents: 1140px;
 $width-contents-large: 1400px;
 $width-min-contents: 1000px;
 $width-contents-in: 880px;
+
+//Break Point Size
+$break-point: 768px;
+
+// margin
+//$margin-contents-ssize:
+
+// grid margin
+$grid-margin-pc: 20px;
+$grid-margin-sp: 10px;
 
 // grid width
 $grid-width-1: 8.33333333%;

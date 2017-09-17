@@ -28,41 +28,6 @@
 }
 
 // ==========================================================
-// Retina用スプライト
-// ==========================================================
-@mixin r-sprite-width($sprite) {
-  width: nth($sprite, 5) / 2;
-}
-@mixin r-sprite-height($sprite) {
-  height: nth($sprite, 6) / 2;
-}
-@mixin r-sprite-position($sprite) {
-  $sprite-offset-x: round(nth($sprite, 3)/2);
-  $sprite-offset-y: round(nth($sprite, 4)/2);
-  background-position: $sprite-offset-x  $sprite-offset-y;
-  background-repeat: no-repeat;
-}
-
-@mixin r-sprite-image($sprite) {
-  $sprite-image: nth($sprite, 9);
-  background-image: url($sprite-image);
-}
-
-// ==========================================================
-// background-sizeのmixinを新たに生成
-// ==========================================================
-@mixin r-sprite-size($sprite) {
-  background-size: round(nth($sprite, 7)/2) round(nth($sprite, 8)/2);
-}
-@mixin r-sprite($sprite) {
-  @include r-sprite-image($sprite);
-  @include r-sprite-position($sprite);
-  @include r-sprite-width($sprite);
-  @include r-sprite-height($sprite);
-  @include r-sprite-size($sprite);
-}
-
-// ==========================================================
 // clearfix
 // ==========================================================
 @mixin clearfix() {
@@ -80,11 +45,11 @@
 // ==========================================================
 // font size sp to pc
 // ==========================================================
-@mixin font-size-change-pc($fontSizeSp) {
-  @include mq-pc() {
-    font-size: $fontSizeSp + $fontSize * 1px
-  }
-}
+//@mixin font-size-change-pc($fontSizeSp) {
+//  @include mq-pc() {
+//
+//  }
+//}
 
 // ==========================================================
 // icon view
@@ -96,8 +61,8 @@
   background-size: contain;
   display: inline-block;
   @include mq-pc() {
-    width: $ico-width-sp;
-    height: $ico-height-sp;
+    width: $ico-width-pc;
+    height: $ico-height-pc;
   }
 }
 
