@@ -1,0 +1,146 @@
+/* ==========================================================
+ container
+========================================================== */
+html {
+  @include mq-pc {
+  }
+  @include mq-sptb {
+  }
+  @include mq-sptb {
+
+  }
+}
+.wrapper {
+
+}
+
+/* ==========================================================
+ container
+========================================================== */
+.container {
+  &-in {
+
+  }
+  @include mq-pc {
+    &-in {
+
+    }
+  }
+  @include mq-sptb {
+    &-in {
+
+    }
+  }
+}
+
+/* ==========================================================
+ header
+========================================================== */
+.header {
+  @include mq-sptb {
+
+  }
+  &-in {
+
+    @include mq-pc {
+
+      &:after {
+
+      }
+    }
+    @include mq-sptb {
+
+    }
+  }
+
+  // type facility
+  &.type-facility {
+    @include mq-pc {
+    }
+    @include mq-sptb {
+
+    }
+  }
+  &.type-facility &-in {
+    @include mq-pc {
+    }
+    @include mq-sptb {
+
+    }
+  }
+}
+
+/* header-logo
+---------------------------------------------------------- */
+.header-logo {
+  @include mq-print {
+    &__pc { display: none; }
+
+  }
+  @include mq-pc {
+
+  }
+  @include mq-sptb {
+
+  }
+  &__pc {
+    @include mq-pc {}
+    @include mq-tb { display: none; }
+    @include mq-sp { display: none; }
+  }
+  &__tbsp {
+    @include mq-pc { display: none;}
+    @include mq-tb {
+    }
+    @include mq-sp {
+    }
+  }
+}
+
+/* ==========================================================
+ footer
+========================================================== */
+.footer {
+  @include mq-print {
+    display: none;
+  }
+}
+
+/* footer-in
+---------------------------------------------------------- */
+.footer-in {
+}
+
+/* footer-to-top
+---------------------------------------------------------- */
+.footer-to-top {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  @include mq-pc {
+    bottom: 150px;
+    padding-left: 180px;//サイドナビ幅
+    z-index: 10;
+  }
+  @include mq-tb {
+    bottom: 100px;
+    padding: 0 32px;
+  }
+  @include mq-sp {
+    bottom: 50px;
+    padding: 0 12px;
+  }
+}
+
+/* ==========================================================
+ nav-global
+========================================================== */
+.nav-global {
+  border-bottom: 1px solid $greycolor-04;
+  &__item {
+    & + & {
+      border-top: 1px solid $greycolor-04;
+    }
+  }
+}

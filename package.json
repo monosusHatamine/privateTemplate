@@ -1,64 +1,55 @@
 {
-  "name": "tanaka11",
+  "name": "mobile_spatial_statistics",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "_gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "watch": "gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/monosus/CF_resumu.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/monosus/CF_resumu/issues"
-  },
-  "homepage": "https://github.com/monosus/CF_resumu#readme",
   "devDependencies": {
     "autoprefixer": "^6.5.4",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
-    "babelify": "^7.3.0",
     "browser-sync": "^2.18.6",
-    "browserify": "^14.4.0",
+    "connect-ssi": "^1.1.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
+    "gulp-aigis": "^1.3.0",
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^1.3.2",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-convert-encoding": "^1.0.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-data": "^1.2.1",
     "gulp-ejs": "^3.0.1",
-    "gulp-htmlhint": "^0.3.1",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.1.1",
+    "gulp-line-ending-corrector": "^1.0.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify-ejs": "^1.0.3",
+    "gulp-minify-html": "^1.0.6",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
     "gulp-prettify": "^0.5.0",
     "gulp-progeny": "^0.3.2",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.0.0",
-    "gulp-sitemap": "^4.2.0",
-    "gulp-sourcemaps": "^2.3.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
     "gulp.spritesmith": "^6.2.0",
-    "path": "^0.12.7",
+    "minimist": "^1.2.0",
     "postcss-flexbugs-fixes": "^2.1.0",
     "run-sequence": "^1.2.2",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.9.0"
+    "sc5-styleguide": "^2.0.4"
   },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015",
-            "es2016"
-          ]
-        }
-      ]
-    ]
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "gulp-ignore": "^2.0.2"
   }
 }

@@ -1,18 +1,23 @@
+# ignorefiles
 
-.DS_Store
-.AppleDouble
-.LSOverride
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-._*
-/\.
+#folder
+node_modules/
+#gulp build files
 
-/node_modules/
-/bower_components/
-*.log
 
-dest/
+#ignore files build by phpStorm
 .idea/
-list.md
+
+#ignore files build by gulp
+.dest/
+
+#file
+.DS_Store
+#.gitignor.htaccess
+#.csscomb.setting
+#gulpfile.js
+#package.json
+#.editorconfig
+
+#diff
+difference/

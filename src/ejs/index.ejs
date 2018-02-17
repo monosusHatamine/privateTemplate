@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%_; set = {
+  fileName: fileName,
+  root: relativeRoot, //ルートまでの相対パスを記述してください。第二階層の場合「../」※自動設定
+}; _%>
+<%- include(set.root + 'common/inc/_head-meta', {set:set}); -%>
+<%- include(set.root + 'common/inc/_head-css', {set:set}); -%>
+<%- include(set.root + 'common/inc/_head-font', {set:set}); -%>
+</head>
+<body>
+<div class="wrapper">
+  <div class="container">
+    <%- include(set.root + 'common/inc/_header'); -%>
+    <div class="container-in">
+      <article class="contents">
+        <div class="contents-main">
+
+          <p>ここへコーディング</p>
+
+        </div><!-- /contents-main -->
+      </article><!-- /contents -->
+      <%- include(set.root + 'common/inc/_footer'); -%>
+    </div><!-- /container-in -->
+  </div><!-- /container -->
+</div><!-- /wrapper -->
+<%- include(set.root + 'common/inc/_head-js', {set:set}); -%>
+</body>
+</html>

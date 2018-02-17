@@ -1,146 +1,98 @@
-/**
- * common.js
- *
- */
+/* ==========================================================
+ setting
+ ========================================================== */
+/* condition setting */
+var condition = {};
 
-
-/* ----------------------------------------------------------
- init
----------------------------------------------------------- */
-$(function(){
-	// スムーススクロール
-	pageScroll();
-	// 画像ロールオーバー
-	rollover();
-	// ローカルナビカレント
-	localNav();
+/* user agent */
+var ua = navigator.userAgent.toLowerCase();
+var ver = navigator.appVersion.toLowerCase();
+var isMSIE = (ua.indexOf('msie') > -1) && (ua.indexOf('opera') === -1); //all ie
+var isIE11 = (ua.indexOf('trident/7') > -1); // ie11
+var isEdge = (ua.indexOf("AppleWebkit") >= 0 && ua.indexOf("Edge") === -1); //edge
+/* matchMedia */
+var matchMediaFunction = function () {
+  isMatchSP = window.matchMedia('(max-width:599px)').matches;
+  isMatchSPTB = window.matchMedia('(max-width:1024px)').matches;
+  isMatchTB = window.matchMedia('(min-width:600px) and (max-width:1024px)').matches;
+  isMatchTBPC = window.matchMedia('(min-width:600px)').matches;
+  isMatchPC = window.matchMedia('(min-width:1025px)').matches;
+  isBrowser = '';
+  if (isMatchPC) {
+    isBrowser = 'pc';
+  } else if (isMatchTB) {
+    isBrowser = 'tb';
+  } else if (isMatchSP) {
+    isBrowser = 'sp';
+  }
+};
+$(function () {
+  matchMediaFunction();//初期処理
+  $(window).on('load resize', function () {//リサイズ処理
+    matchMediaFunction();
+  });
 });
 /* ----------------------------------------------------------
- pageScroll
+  anchor link
 ---------------------------------------------------------- */
-var pageScroll = function(){
-	$('.js-scroll').click(function() {
-		var speed = 400; // スクロールスピード
-		var href= $(this).attr("href");
-		var target = $(href == "#" || href == "" ? 'html' : href);
-		var position = target.offset().top;
-		if(href == '#'){
-			// リンク#のときはページの先頭へ
-			$('body,html').animate({scrollTop:0}, speed, 'swing');
-		} else {
-			// それ以外は指定idへ
-			$('body,html').animate({scrollTop:position}, speed, 'swing');
-		}
-		return false;
-	});
-}
-/* ----------------------------------------------------------
- rollover
----------------------------------------------------------- */
-var rollover = function(){
-	var suffix = { normal : '_no.', over   : '_on.'}
-	$('.js-over').each(function(){
-		var a = null;
-		var img = null;
-		var elem = $(this).get(0);
-		if( elem.nodeName.toLowerCase() == 'a' ){
-			a = $(this);
-			img = $('img',this);
-		}else if( elem.nodeName.toLowerCase() == 'img' || elem.nodeName.toLowerCase() == 'input' ){
-			img = $(this);
-		}
-		var src_no = img.attr('src'); // イメージ取得
-		var src_on = src_no.replace(suffix.normal, suffix.over); // オーバーイメージに変換
-		/* イメージ置換 */
-		if( elem.nodeName.toLowerCase() == 'a' ){
-			a.on("mouseover focus",function(){ img.attr('src',src_on); })
-				.on("mouseout blur",  function(){ img.attr('src',src_no); });
-		}else if( elem.nodeName.toLowerCase() == 'img' ){
-			img.on("mouseover",function(){ img.attr('src',src_on); })
-				.on("mouseout", function(){ img.attr('src',src_no); });
-		}else if( elem.nodeName.toLowerCase() == 'input' ){
-			img.on("mouseover focus",function(){ img.attr('src',src_on); })
-				.on("mouseout blur",  function(){ img.attr('src',src_no); });
-		}
-		/* イメージ先読み */
-		var cacheimg = document.createElement('img');
-		cacheimg.src = src_on;
-	});
+$(function () {
+  anchorLink();
+});
+var anchorLink = function (argAction, argHref) {
+  //スクロール処理関数
+  var scrollFunction = function (argItemHref, argSpeed) {
+    var addHeight = 20,//スクロール時の余白追加
+      matchCase = /.*(#.*)/,
+      hrefPageUrl = argItemHref.match(matchCase)[1].split(/\?/)[0],
+      target = $(hrefPageUrl === '#' || hrefPageUrl === '' ? 'body' : hrefPageUrl);
+    try {
+      var position = target.offset().top - addHeight;
+    } catch (e) {
+      console.log(hrefPageUrl + 'がありません。');
+      console.log(e);
+    }
+    //SPヘッダー追従分の余白計算
+    if (isMatchPC) {
+      position = position - 93 - 100;//header height
+    }else{
+      position = position - 68 - 50;//header height
+    }
+    if (position) {
+      $('body,html').stop().animate({scrollTop: position}, argSpeed);
+    }
+  };
+
+  //クリック処理
+  $('.js-scroll').on('click', function () {
+    var thisHref = $(this).attr('href') ? $(this).attr('href'): $(this).find('[href*="#"]').attr('href');
+    scrollFunction(thisHref, 1000);
+    return false;
+  });
+
+  //読み込み処理
+  if (location.href.match(/#/)) {//アクセス時スクロール処理
+    $(window).on('load', function () {
+      console.log(location.href);
+      scrollFunction(location.href, 400);
+    });
+  }
 };
 /* ----------------------------------------------------------
- localNav
+  accordion
 ---------------------------------------------------------- */
-var localNav = function(){
-	var navClass = document.body.className.toLowerCase(),
-		navLocal = $(".nav-local"),
-		prefix = 'nav',
-		current = 'is-current',
-		parent = 'is-parent',
-		regex = {
-			a  : /l/,
-			dp : [
-				/l[\d]+-[\d]+-[\d]+-[\d]+/,
-				/l[\d]+-[\d]+-[\d]+/,
-				/l[\d]+-[\d]+/,
-				/l[\d]+/
-			]
-		},
-		route = [],
-		i,
-		l,
-		temp,
-		node;
-
-	/* 子要素を非表示 */
-	$("ul ul", parent).hide();
-	if( navClass.indexOf("ldef") >= -1 ){
-		for(i = 0, l = regex.dp.length; i < l; i++){
-			temp = regex.dp[i].exec( navClass );
-			if( temp ){
-				route[i] = temp[0].replace(regex.a, prefix);
-			}
-		}
-
-		/* アクティブ時にクラス付与 */
-		if( route[0] ){
-			// depth 4
-			node = $("a."+route[0], navLocal);
-			node.addClass(current);
-			node.next().show();
-			node.parent().parent().show()
-				.parent().parent().show()
-				.parent().parent().show();
-			node.parent().parent().prev().addClass(parent);
-			node.parent().parent()
-				.parent().parent().prev().addClass(parent);
-			node.parent().parent()
-				.parent().parent()
-				.parent().parent().prev().addClass(parent);
-
-		}else if( route[1] ){
-			// depth 3
-			node = $("a."+route[1], navLocal);
-			node.addClass(current);
-			node.next().show();
-			node.parent().parent().show()
-				.parent().parent().show();
-			node.parent().parent().prev().addClass(parent);
-			node.parent().parent()
-				.parent().parent().prev().addClass(parent);
-
-		}else if( route[2] ){
-			// depth 2
-			node = $("a."+route[2], navLocal);
-			node.addClass(current);
-			node.next().show();
-			node.parent().parent().show();
-			node.parent().parent().prev().addClass(parent);
-
-		}else if( route[3] ){
-			// depth 1
-			node = $("a."+route[3], navLocal);
-			node.addClass(current);
-			node.next().show();
-		}
-	}
-}
+$(function () {
+  accordionFunc();
+});
+var accordionFunc = function () {
+  var $root = $('[data-accordion="root"]');
+  var $trigger = $('[data-accordion="trigger"]');
+  var $target = $('[data-accordion="target"]');
+  var activeClass = 'is-active';
+  $root.each(function () {
+    $(this).find($target).hide();
+  });
+  $trigger.on('click',function () {
+    $(this).toggleClass(activeClass);
+    $(this).closest($root).find($target).slideToggle();
+  });
+};

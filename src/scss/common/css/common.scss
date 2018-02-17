@@ -1,35 +1,9 @@
 @charset "utf-8";
+///* sass */
+//==================================================
+// sass インクルード設定
+//==================================================
+//common
+@import "../Foundation/_setting"; //reset.css
+@import "../Foundation/_universal"; //汎用クラス
 
-@import "../base/variable";
-@import "../base/sprite";
-@import "../base/mixin";
-@import "../base/reset";
-@import "../base/base";
-@import "../base/fonts";
-
-//base
-@import "../layout/layout";
-@import "../layout/header";
-@import "../layout/nav";
-@import "../layout/footer";
-
-//module
-@import "../module/form";
-@import "../module/hero";
-@import "../module/box";
-@import "../module/card";
-@import "../module/grid";
-@import "../module/title";
-@import "../module/text";
-@import "../module/image";
-@import "../module/list";
-@import "../module/mod";
-@import "../module/table";
-@import "../module/button";
-@import "../module/icon";
-@import "../module/link";
-@import "../module/sns";
-@import "../module/helper";
-
-//state
-@import "../state/state";

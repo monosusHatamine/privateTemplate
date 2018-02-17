@@ -1,0 +1,223 @@
+@charset "UTF-8";
+@import "variable";
+@import "mixin";
+//common setting (ver 3.0 Beta)
+//==================================================
+//----------------------------------
+// 変数・mixin設定
+//----------------------------------
+
+//scroll
+//------------------------------------------------
+html {
+  overflow-y: scroll;
+}
+
+//common/font family
+//------------------------------------------------
+body, input, textarea, select, button {
+  font-family: $mainfont;
+}
+
+//common/font size
+//------------------------------------------------
+//body
+body {
+  color: $colorDefault;
+  @include baseFontSize;
+  -webkit-text-size-adjust: 100%;
+  background: $whitecolor;
+}
+
+//css reset
+//------------------------------------------------
+body, div, p,
+h1, h2, h3, h4, h5, h6,
+dl, dt, dd, ul, ol, li,
+table, caption, th, td,
+form, fieldset, input, textarea, select,
+pre, address, blockquote,
+embed, object,
+address, dfn,
+article, aside, canvas, figure, figcaption,
+footer, header, menu, nav, section, main,
+audio, video {
+  margin: 0;
+  padding: 0;
+}
+
+i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+
+//Add the correct display in IE 9-.
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main, //Add the correct display in IE.
+menu,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+//Add the correct display in iOS 4-7.
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+//Remove the outline when hovering in all browsers
+:hover {
+  outline-width: 0;
+}
+
+//tags base setting
+//------------------------------------------------
+//h
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+//p
+p {
+  font-weight: normal;
+}
+
+//em || strong
+em, strong {
+  font-style: normal;
+  font-weight: bold;
+}
+
+//ul || ol
+ul, ol {
+  list-style: none;
+}
+
+//table
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  empty-cells: show;
+}
+
+caption, th {
+  text-align: left;
+}
+
+//img
+img {
+  max-width: 100%;
+  border: 0;
+  vertical-align: top;
+}
+
+//form
+form {
+  font-weight: normal;
+}
+
+//input || button || textarea || select
+input, button, textarea, select {
+  font: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  text-transform: none;
+}
+
+//Add the correct default in iOS.
+input[type="submit"],
+input[type="button"],
+button {
+  -webkit-appearance: button;
+  appearance: button;
+  cursor: pointer;
+}
+
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+
+input[type="submit"]:focus,
+input[type="button"]:focus {
+  outline-offset: -2px;
+}
+
+//Add the correct default in firefox.
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+//a
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $colorLink;
+}
+a:link {
+}
+:visited {
+  color: $colorLinkVisited;
+}
+a:hover {
+}
+a:active {
+}
+a:focus {
+}
+
+/* ==========================================================
+ add style
+========================================================== */
+//All box-sizing
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/* selectbox
+---------------------------------------------------------- */
+select {
+  border: 2px solid $blackcolor;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 50px 3px 18px;
+  background: $whitecolor;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  @include mq-sp {
+    border-width: 1px;
+    border-radius: 3px;
+  }
+  //IEで出る矢印アイコン消す
+  &::-ms-expand {
+    display: none;
+  }
+  option {
+    font-weight: bold;
+  }
+}

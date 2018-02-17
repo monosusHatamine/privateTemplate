@@ -1,0 +1,76 @@
+<%_;
+var settingData = {};//settingDataの初期化
+//ページ情報取得関数
+var catchPageId = function(currentPath,setData) {
+  for(var i = 0; i < setData.length; i++) {
+    //jsonのurlとfileDirを比較
+    if(setData[i].url == currentPath) {
+      settingData = {
+        title: setData[i].title,
+        keywords: setData[i].keywords,
+        description: setData[i].description,
+        ogTitle: setData[i].ogTitle,
+        ogType: setData[i].ogType,
+        ogDescription: setData[i].ogDescription,
+        siteUrl: setData[i].siteUrl,
+        ogImg: setData[i].ogImg,
+        ogSiteName: setData[i].ogSiteName,
+        twitterCard: setData[i].twitterCard,
+        twitterSite: setData[i].twitterSite,
+        twitterTitle: setData[i].twitterTitle,
+        twitterDescription: setData[i].twitterDescription
+      };
+    }
+  }
+};
+//現在のpathの取得
+var fileDir = set.fileName.replace('.ejs','.html').replace('index.html','');//ページ情報を参照
+catchPageId(fileDir,data.setting_json);//pathとjsonの照合を実行
+
+//meta出力データを宣言 デフォルトデータを代入
+var ejsOutput = {
+  'title': data.default.title,
+  'keywords': data.default.keywords,
+  'description': data.default.description,
+  'ogTitle': data.default.ogTitle,
+  'ogType': data.default.ogType,
+  'ogDescription': data.default.ogDescription,
+  'siteUrl': data.default.siteUrl,
+  'ogImg': data.default.ogImg,
+  'ogSiteName': data.default.ogSiteName,
+  'twitterCard': data.default.twitterCard,
+  'twitterSite': data.default.twitterSite,
+  'twitterTitle': data.default.twitterTitle,
+  'twitterDescription': data.default.twitterDescription
+} ;
+//setting_jsonデータでmeta出力データを上書き
+if(settingData.title != undefined && settingData!='default' ){ejsOutput.title = settingData.title}
+if(settingData.keywords != undefined && settingData!='default' ){ejsOutput.keywords = settingData.keywords}
+if(settingData.description != undefined && settingData!='default' ){ejsOutput.description = settingData.description}
+if(settingData.ogTitle != undefined && settingData!='default' ){ejsOutput.ogTitle = settingData.ogTitle}
+if(settingData.ogType != undefined && settingData!='default' ){ejsOutput.ogType = settingData.ogType}
+if(settingData.ogDescription != undefined && settingData!='default' ){ejsOutput.ogDescription = settingData.ogDescription}
+if(settingData.siteUrl != undefined && settingData!='default' ){ejsOutput.siteUrl = settingData.siteUrl}
+if(settingData.ogImg != undefined && settingData!='default' ){ejsOutput.ogImg = settingData.ogImg}
+if(settingData.ogSiteName != undefined && settingData!='default' ){ejsOutput.ogSiteName = settingData.ogSiteName}
+if(settingData.twitterCard != undefined && settingData!='default' ){ejsOutput.twitterCard = settingData.twitterCard}
+if(settingData.twitterSite != undefined && settingData!='default' ){ejsOutput.twitterSite = settingData.twitterSite}
+if(settingData.twitterTitle != undefined && settingData!='default' ){ejsOutput.twitterTitle = settingData.twitterTitle}
+if(settingData.twitterDescription != undefined && settingData!='default' ){ejsOutput.twitterDescription = settingData.twitterDescription}
+_%>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<% if (ejsOutput.title != '-'){ %><title><%= ejsOutput.title %></title><% } %>
+<% if (ejsOutput.keywords != '-'){ %><meta name="keywords" content="<%= ejsOutput.keywords %>"><% } %>
+<% if (ejsOutput.description != '-'){ %><meta name="description" content="<%= ejsOutput.description %>"><% } %>
+<% if (ejsOutput.title != '-'){ %><meta property="og:title" content="<%= ejsOutput.title %>"><% } %>
+<% if (ejsOutput.ogType != '-'){ %><meta property="og:type" content="<%= ejsOutput.ogType %>"><% } %>
+<% if (ejsOutput.description != '-'){ %><meta property="og:description" content="<%= ejsOutput.description %>"><% } %>
+<% if (ejsOutput.siteUrl != '-'){ %><meta property="og:url" content="<%= ejsOutput.siteUrl %>"><% } %>
+<% if (ejsOutput.ogImg != '-'){ %><meta property="og:image" content="<%= ejsOutput.ogImg %>"><% } %>
+<% if (ejsOutput.twitterCard != '-'){ %><meta name="twitter:card" content="<%= ejsOutput.twitterCard %>"><% } %>
+<% if (ejsOutput.twitterSite != '-'){ %><meta name="twitter:site" content="<%= ejsOutput.twitterSite %>"><% } %>
+<% if (ejsOutput.twitterTitle != '-'){ %><meta name="twitter:title" content="<%= ejsOutput.twitterTitle %>"><% } %>
+<% if (ejsOutput.twitterDescription != '-'){ %><meta name="twitter:description" content="<%= ejsOutput.twitterDescription %>"><% } %>

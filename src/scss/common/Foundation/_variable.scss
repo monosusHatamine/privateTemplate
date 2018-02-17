@@ -1,0 +1,76 @@
+@import "mixin";
+// variable
+// width
+//===========================
+$width-lg-full: 1920px;
+$width-lg-middle: 1280px;
+$width-lg-in: 960px;
+
+
+//サイト全体で使うfont-family
+$mainfont: 'Noto Sans Japanese', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif !default;
+
+//サイト全体で使うカラーコード
+$colorDefault: #000 !default; //デフォルトのテキストカラー
+$colorLink: #0066c4 !default; //デフォルトのリンクテキストカラー
+$colorLinkHover: #0066c4 !default; //デフォルトのリンクテキストカラー
+$colorLinkVisited: #844da7 !default; //デフォルトのリンクテキストカラー
+
+
+// color
+//===========================
+//黒系
+$blackcolor: #000;
+
+//灰色
+$greycolor: #333;
+
+//白
+$whitecolor: #fff;
+
+//赤
+$redcolor-01: #df0023;
+
+//青
+$bluecolor-01: #1765c6;
+
+
+// item color
+//===========================
+//コンテンツ
+
+//ヘッダー
+
+//フッター
+
+
+// font-size
+//===========================
+// title
+
+
+// line-height
+//===========================
+$line-height-default: 1.5;
+
+// grid
+//===========================
+// grid setting
+// grid margin
+$grid-margin-pc: 12px;
+$grid-margin-sp: 4.5px;
+
+// grid width
+$grid-width-1: 8.33333333%;
+$grid-width-2: 16.66666667%;
+$grid-width-2-5: 20%;
+$grid-width-3: 25%;
+$grid-width-4: 33.33333333%;
+$grid-width-5: 41.66666667%;
+$grid-width-6: 50%;
+$grid-width-7: 58.33333333%;
+$grid-width-8: 66.66666667%;
+$grid-width-9: 75%;
+$grid-width-10: 83.33333333%;
+$grid-width-11: 91.66666667%;
+$grid-width-12: 100%;

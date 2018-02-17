@@ -1,0 +1,496 @@
+@charset "UTF-8";
+// universal class
+//==================================================
+// rwd switch display
+.no-pc {
+  @include mq-pc {display: none !important;}
+  @include mq-tb {}
+  @include mq-sp {}
+}
+.no-tb {
+  @include mq-pc {}
+  @include mq-tb {display: none !important;}
+  @include mq-sp {}
+}
+.no-sp {
+  @include mq-pc {}
+  @include mq-tb {}
+  @include mq-sp {display: none !important;}
+}
+.only-pc {
+  @include mq-pc {}
+  @include mq-tb {display: none !important;}
+  @include mq-sp {display: none !important;}
+}
+.only-tb {
+  @include mq-pc {display: none !important;}
+  @include mq-tb {}
+  @include mq-sp {}
+}
+.only-sp {
+  @include mq-pc {display: none !important;}
+  @include mq-tb {display: none !important;}
+  @include mq-sp {}
+}
+
+// align
+.is-center {text-align: center !important;}
+.is-left {text-align: left !important;}
+.is-right {text-align: right !important;}
+@include mq-pc {
+  .is-center-pc {text-align: center !important;}
+  .is-left-pc {text-align: left !important;}
+  .is-right-pc {text-align: right !important;}
+}
+@include mq-pctb {
+  .is-center-pctb {text-align: center !important;}
+  .is-left-pctb {text-align: left !important;}
+  .is-right-pctb {text-align: right !important;}
+}
+@include mq-tb {
+  .is-center-tb {text-align: center !important;}
+  .is-left-tb {text-align: left !important;}
+  .is-right-tb {text-align: right !important;}
+}
+@include mq-sptb {
+  .is-center-sptb {text-align: center !important;}
+  .is-left-sptb {text-align: left !important;}
+  .is-right-sptb {text-align: right !important;}
+}
+@include mq-sp {
+  .is-center-sp {text-align: center !important;}
+  .is-left-sp {text-align: left !important;}
+  .is-right-sp {text-align: right !important;}
+}
+
+// flex-align
+.is-flex-center {justify-content: center !important;}
+.is-flex-left {justify-content: flex-start !important;}
+.is-flex-right {justify-content: flex-end !important;}
+@include mq-pc {
+  .is-flex-center-pc {justify-content: center !important;}
+  .is-flex-left-pc {justify-content: flex-start !important;}
+  .is-flex-right-pc {justify-content: flex-end !important;}
+}
+@include mq-pctb {
+  .is-flex-center-pctb {justify-content: center !important;}
+  .is-flex-left-pctb {justify-content: flex-start !important;}
+  .is-flex-right-pctb {justify-content: flex-end !important;}
+}
+@include mq-tb {
+  .is-flex-center-tb {justify-content: center !important;}
+  .is-flex-left-tb {justify-content: flex-start !important;}
+  .is-flex-right-tb {justify-content: flex-end !important;}
+}
+@include mq-sptb {
+  .is-flex-center-sptb {justify-content: center !important;}
+  .is-flex-left-sptb {justify-content: flex-start !important;}
+  .is-flex-right-sptb {justify-content: flex-end !important;}
+}
+@include mq-sp {
+  .is-flex-center-sp {justify-content: center !important;}
+  .is-flex-left-sp {justify-content: flex-start !important;}
+  .is-flex-right-sp {justify-content: flex-end !important;}
+}
+
+// font weight
+.is-bold {font-weight: bold !important;}
+.is-normal {font-weight: normal !important;}
+@include mq-pc {
+  .is-bold-pc {font-weight: bold !important;}
+  .is-normal-pc {font-weight: normal !important;}
+}
+@include mq-pctb {
+  .is-bold-pctb {font-weight: bold !important;}
+  .is-normal-pctb {font-weight: normal !important;}
+}
+@include mq-tb {
+  .is-bold-tb {font-weight: bold !important;}
+  .is-normal-tb {font-weight: normal !important;}
+}
+@include mq-sptb {
+  .is-bold-sptb {font-weight: bold !important;}
+  .is-normal-sptb {font-weight: normal !important;}
+}
+@include mq-sp {
+  .is-bold-sp {font-weight: bold !important;}
+  .is-normal-sp {font-weight: normal !important;}
+}
+
+// text word-break
+.is-break-all { word-break: break-all; }
+.is-keep-all { word-break: keep-all; }
+.is-nowrap { white-space: nowrap; }
+@include mq-pc {
+  .is-break-all-pc { word-break: break-all; }
+  .is-keep-all-pc { word-break: keep-all; }
+  .is-nowrap-pc { white-space: nowrap; }
+}
+@include mq-pctb {
+  .is-break-all-pctb { word-break: break-all; }
+  .is-keep-all-pctb { word-break: keep-all; }
+  .is-nowrap-pctb { white-space: nowrap; }
+}
+@include mq-tb {
+  .is-break-all-tb { word-break: break-all; }
+  .is-keep-all-tb { word-break: keep-all; }
+  .is-nowrap-tb { white-space: nowrap; }
+}
+@include mq-sptb {
+  .is-break-all-sptb { word-break: break-all; }
+  .is-keep-all-sptb { word-break: keep-all; }
+  .is-nowrap-sptb { white-space: nowrap; }
+}
+@include mq-sp {
+  .is-break-all-sp { word-break: break-all; }
+  .is-keep-all-sp { word-break: keep-all; }
+  .is-nowrap-sp { white-space: nowrap; }
+}
+
+// color
+.is-color-01 { color: #e70c45 !important; }
+.is-color-white { color: #fff !important; }
+@include mq-pc {
+  .is-color-01-pc { color: #e70c45 !important; }
+  .is-color-white-pc { color: #fff !important; }
+}
+@include mq-pctb {
+  .is-color-01-pctb { color: #e70c45 !important; }
+  .is-color-white-pctb { color: #fff !important; }
+}
+@include mq-tb {
+  .is-color-01-tb { color: #e70c45 !important; }
+  .is-color-white-tb { color: #fff !important; }
+}
+@include mq-sptb {
+  .is-color-01-sptb { color: #e70c45 !important; }
+  .is-color-white-sptb { color: #fff !important; }
+}
+@include mq-sp {
+  .is-color-01-sp { color: #e70c45 !important; }
+  .is-color-white-sp { color: #fff !important; }
+}
+
+
+// color pattern green
+.is-color-077e1a { color: #077e1a !important; }//ゴルフ
+.is-color-268300 { color: #268300 !important; }//ウインズ後楽園
+.is-color-105928 { color: #105928 !important; }//後楽園ホール
+.is-color-00563f { color: #00563f !important; }//野球殿堂博物館
+.is-color-00893c { color: #00893c !important; }//アソボーノ・ショップ
+.is-color-007c00 { color: #007c00 !important; }//東京ドーム
+.is-color-007f7f { color: #007f7f !important; }//東京ドーム
+// color pattern blue
+.is-color-005bac { color: #005bac !important; }//ラクーア
+.is-color-123a9d { color: #123a9d !important; }//野球
+.is-color-0078A6 { color: #0078A6 !important; }//スパ ラクーア
+.is-color-141e44 { color: #141e44 !important; }//公開収録
+.is-color-014da2 { color: #014da2 !important; }//TDCホール
+.is-color-293855 { color: #293855 !important; }//東京ドームホテル
+.is-color-2a576d { color: #2a576d !important; }//プリズムホール
+.is-color-003459 { color: #003459 !important; }//スポドリ！
+.is-color-7db2f1 { color: #7db2f1 !important; }//シアターGロッソ
+.is-color-3914af { color: #3914af !important; }//ローラースケート
+.is-color-2d4696 { color: #2d4696 !important; }//オフト後楽園
+// color pattern red/pink
+.is-color-ee2227 { color: #ee2227 !important; }//シアターＧロッソ/ボクシング
+.is-color-c2544b { color: #c2544b !important; }//スポドリ
+.is-color-e60012 { color: #e60012 !important; }//プリズムホール
+.is-color-9b1616 { color: #9b1616 !important; }//後楽園ホール
+.is-color-df0023 { color: #df0023 !important; }//東京ドームシティ
+.is-color-cc1300 { color: #cc1300 !important; }//ボウリング/ボウリング（5F）
+.is-color-f5b1aa { color: #f5b1aa !important; }//Gallery AaMo/アーモ
+.is-color-e4005d { color: #e4005d !important; }//ヒーローショー/ヒーローショー
+.is-color-da0c54 { color: #da0c54 !important; }//アトラクションズ
+.is-color-de006d { color: #de006d !important; }//ローラースケート
+// color pattern orange/yellow
+.is-color-d83e05 { color: #d83e05 !important; }//プロレス/ボルダリング
+.is-color-e85b00 { color: #e85b00 !important; }//GO-FUN/グルメ
+.is-color-fabd00 { color: #fabd00 !important; }//TeNQ
+.is-color-ffa235 { color: #ffa235 !important; }//ミーツポート
+// color pattern black/brown
+.is-color-651f37 { color: #651f37 !important; }//格闘技/レンタルフィールド
+.is-color-231f21 { color: #231f21 !important; }//TDCホール
+.is-color-2e1e0b { color: #2e1e0b !important; }//CuBAR LOUNGE
+.is-color-666666 { color: #666666 !important; }//その他
+.is-color-333333 { color: #333333 !important; }//
+.is-color-000000 { color: #000000 !important; }//TeNQ
+
+@include mq-pc {
+  // color pattern green
+  .is-color-077e1a-pc { color: #077e1a !important; }//ゴルフ
+  .is-color-268300-pc { color: #268300 !important; }//ウインズ後楽園
+  .is-color-105928-pc { color: #105928 !important; }//後楽園ホール
+  .is-color-00563f-pc { color: #00563f !important; }//野球殿堂博物館
+  .is-color-00893c-pc { color: #00893c !important; }//アソボーノ・ショップ
+  .is-color-007c00-pc { color: #007c00 !important; }//東京ドーム
+  .is-color-007f7f-pc { color: #007f7f !important; }//東京ドーム
+  // color pattern blue
+  .is-color-005bac-pc { color: #005bac !important; }//ラクーア
+  .is-color-123a9d-pc { color: #123a9d !important; }//野球
+  .is-color-0078A6-pc { color: #0078A6 !important; }//スパ ラクーア
+  .is-color-141e44-pc { color: #141e44 !important; }//公開収録
+  .is-color-014da2-pc { color: #014da2 !important; }//TDCホール
+  .is-color-293855-pc { color: #293855 !important; }//東京ドームホテル
+  .is-color-2a576d-pc { color: #2a576d !important; }//プリズムホール
+  .is-color-003459-pc { color: #003459 !important; }//スポドリ！
+  .is-color-7db2f1-pc { color: #7db2f1 !important; }//シアターGロッソ
+  .is-color-3914af-pc { color: #3914af !important; }//ローラースケート
+  .is-color-2d4696-pc { color: #2d4696 !important; }//オフト後楽園
+  // color pattern red/pink
+  .is-color-ee2227-pc { color: #ee2227 !important; }//シアターＧロッソ/ボクシング
+  .is-color-c2544b-pc { color: #c2544b !important; }//スポドリ
+  .is-color-e60012-pc { color: #e60012 !important; }//プリズムホール
+  .is-color-9b1616-pc { color: #9b1616 !important; }//後楽園ホール
+  .is-color-df0023-pc { color: #df0023 !important; }//東京ドームシティ
+  .is-color-cc1300-pc { color: #cc1300 !important; }//ボウリング/ボウリング（5F）
+  .is-color-f5b1aa-pc { color: #f5b1aa !important; }//Gallery AaMo/アーモ
+  .is-color-e4005d-pc { color: #e4005d !important; }//ヒーローショー/ヒーローショー
+  .is-color-da0c54-pc { color: #da0c54 !important; }//アトラクションズ
+  .is-color-de006d-pc { color: #de006d !important; }//ローラースケート
+  // color pattern orange/yellow
+  .is-color-d83e05-pc { color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-color-e85b00-pc { color: #e85b00 !important; }//GO-FUN/グルメ
+  .is-color-fabd00-pc { color: #fabd00 !important; }//TeNQ
+  .is-color-ffa235-pc { color: #ffa235 !important; }//ミーツポート
+  // color pattern black/brown
+  .is-color-651f37-pc { color: #651f37 !important; }//格闘技/レンタルフィールド
+  .is-color-231f21-pc { color: #231f21 !important; }//TDCホール
+  .is-color-2e1e0b-pc { color: #2e1e0b !important; }//CuBAR LOUNGE
+  .is-color-666666-pc { color: #666666 !important; }//その他
+  .is-color-333333-pc { color: #333333 !important; }//
+  .is-color-000000-pc { color: #000000 !important; }//TeNQ
+}
+@include mq-pctb {
+  // color pattern green
+  .is-color-077e1a-pctb { color: #077e1a !important; }//ゴルフ
+  .is-color-268300-pctb { color: #268300 !important; }//ウインズ後楽園
+  .is-color-105928-pctb { color: #105928 !important; }//後楽園ホール
+  .is-color-00563f-pctb { color: #00563f !important; }//野球殿堂博物館
+  .is-color-00893c-pctb { color: #00893c !important; }//アソボーノ・ショップ
+  .is-color-007c00-pctb { color: #007c00 !important; }//東京ドーム
+  .is-color-007f7f-pctb { color: #007f7f !important; }//東京ドーム
+  // color pattern blue
+  .is-color-005bac-pctb { color: #005bac !important; }//ラクーア
+  .is-color-123a9d-pctb { color: #123a9d !important; }//野球
+  .is-color-0078A6-pctb { color: #0078A6 !important; }//スパ ラクーア
+  .is-color-141e44-pctb { color: #141e44 !important; }//公開収録
+  .is-color-014da2-pctb { color: #014da2 !important; }//TDCホール
+  .is-color-293855-pctb { color: #293855 !important; }//東京ドームホテル
+  .is-color-2a576d-pctb { color: #2a576d !important; }//プリズムホール
+  .is-color-003459-pctb { color: #003459 !important; }//スポドリ！
+  .is-color-7db2f1-pctb { color: #7db2f1 !important; }//シアターGロッソ
+  .is-color-3914af-pctb { color: #3914af !important; }//ローラースケート
+  .is-color-2d4696-pctb { color: #2d4696 !important; }//オフト後楽園
+  // color pattern red/pink
+  .is-color-ee2227-pctb { color: #ee2227 !important; }//シアターＧロッソ/ボクシング
+  .is-color-c2544b-pctb { color: #c2544b !important; }//スポドリ
+  .is-color-e60012-pctb { color: #e60012 !important; }//プリズムホール
+  .is-color-9b1616-pctb { color: #9b1616 !important; }//後楽園ホール
+  .is-color-df0023-pctb { color: #df0023 !important; }//東京ドームシティ
+  .is-color-cc1300-pctb { color: #cc1300 !important; }//ボウリング/ボウリング（5F）
+  .is-color-f5b1aa-pctb { color: #f5b1aa !important; }//Gallery AaMo/アーモ
+  .is-color-e4005d-pctb { color: #e4005d !important; }//ヒーローショー/ヒーローショー
+  .is-color-da0c54-pctb { color: #da0c54 !important; }//アトラクションズ
+  .is-color-de006d-pctb { color: #de006d !important; }//ローラースケート
+  // color pattern orange/yellow
+  .is-color-d83e05-pctb { color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-color-e85b00-pctb { color: #e85b00 !important; }//GO-FUN/グルメ
+  .is-color-fabd00-pctb { color: #fabd00 !important; }//TeNQ
+  .is-color-ffa235-pctb { color: #ffa235 !important; }//ミーツポート
+  // color pattern black/brown
+  .is-color-651f37-pctb { color: #651f37 !important; }//格闘技/レンタルフィールド
+  .is-color-231f21-pctb { color: #231f21 !important; }//TDCホール
+  .is-color-2e1e0b-pctb { color: #2e1e0b !important; }//CuBAR LOUNGE
+  .is-color-666666-pctb { color: #666666 !important; }//その他
+  .is-color-333333-pctb { color: #333333 !important; }//
+  .is-color-000000-pctb { color: #000000 !important; }//TeNQ
+}
+@include mq-tb {
+  // color pattern green
+  .is-color-077e1a-tb { color: #077e1a !important; }//ゴルフ
+  .is-color-268300-tb { color: #268300 !important; }//ウインズ後楽園
+  .is-color-105928-tb { color: #105928 !important; }//後楽園ホール
+  .is-color-00563f-tb { color: #00563f !important; }//野球殿堂博物館
+  .is-color-00893c-tb { color: #00893c !important; }//アソボーノ・ショップ
+  .is-color-007c00-tb { color: #007c00 !important; }//東京ドーム
+  .is-color-007f7f-tb { color: #007f7f !important; }//東京ドーム
+  // color pattern blue
+  .is-color-005bac-tb { color: #005bac !important; }//ラクーア
+  .is-color-123a9d-tb { color: #123a9d !important; }//野球
+  .is-color-0078A6-tb { color: #0078A6 !important; }//スパ ラクーア
+  .is-color-141e44-tb { color: #141e44 !important; }//公開収録
+  .is-color-014da2-tb { color: #014da2 !important; }//TDCホール
+  .is-color-293855-tb { color: #293855 !important; }//東京ドームホテル
+  .is-color-2a576d-tb { color: #2a576d !important; }//プリズムホール
+  .is-color-003459-tb { color: #003459 !important; }//スポドリ！
+  .is-color-7db2f1-tb { color: #7db2f1 !important; }//シアターGロッソ
+  .is-color-3914af-tb { color: #3914af !important; }//ローラースケート
+  .is-color-2d4696-tb { color: #2d4696 !important; }//オフト後楽園
+  // color pattern red/pink
+  .is-color-ee2227-tb { color: #ee2227 !important; }//シアターＧロッソ/ボクシング
+  .is-color-c2544b-tb { color: #c2544b !important; }//スポドリ
+  .is-color-e60012-tb { color: #e60012 !important; }//プリズムホール
+  .is-color-9b1616-tb { color: #9b1616 !important; }//後楽園ホール
+  .is-color-df0023-tb { color: #df0023 !important; }//東京ドームシティ
+  .is-color-cc1300-tb { color: #cc1300 !important; }//ボウリング/ボウリング（5F）
+  .is-color-f5b1aa-tb { color: #f5b1aa !important; }//Gallery AaMo/アーモ
+  .is-color-e4005d-tb { color: #e4005d !important; }//ヒーローショー/ヒーローショー
+  .is-color-da0c54-tb { color: #da0c54 !important; }//アトラクションズ
+  .is-color-de006d-tb { color: #de006d !important; }//ローラースケート
+  // color pattern orange/yellow
+  .is-color-d83e05-tb { color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-color-e85b00-tb { color: #e85b00 !important; }//GO-FUN/グルメ
+  .is-color-fabd00-tb { color: #fabd00 !important; }//TeNQ
+  .is-color-ffa235-tb { color: #ffa235 !important; }//ミーツポート
+  // color pattern black/brown
+  .is-color-651f37-tb { color: #651f37 !important; }//格闘技/レンタルフィールド
+  .is-color-231f21-tb { color: #231f21 !important; }//TDCホール
+  .is-color-2e1e0b-tb { color: #2e1e0b !important; }//CuBAR LOUNGE
+  .is-color-666666-tb { color: #666666 !important; }//その他
+  .is-color-333333-tb { color: #333333 !important; }//
+  .is-color-000000-tb { color: #000000 !important; }//TeNQ
+}
+@include mq-sptb {
+  // color pattern green
+  .is-color-077e1a-sptb { color: #077e1a !important; }//ゴルフ
+  .is-color-268300-sptb { color: #268300 !important; }//ウインズ後楽園
+  .is-color-105928-sptb { color: #105928 !important; }//後楽園ホール
+  .is-color-00563f-sptb { color: #00563f !important; }//野球殿堂博物館
+  .is-color-00893c-sptb { color: #00893c !important; }//アソボーノ・ショップ
+  .is-color-007c00-sptb { color: #007c00 !important; }//東京ドーム
+  .is-color-007f7f-sptb { color: #007f7f !important; }//東京ドーム
+  // color pattern blue
+  .is-color-005bac-sptb { color: #005bac !important; }//ラクーア
+  .is-color-123a9d-sptb { color: #123a9d !important; }//野球
+  .is-color-0078A6-sptb { color: #0078A6 !important; }//スパ ラクーア
+  .is-color-141e44-sptb { color: #141e44 !important; }//公開収録
+  .is-color-014da2-sptb { color: #014da2 !important; }//TDCホール
+  .is-color-293855-sptb { color: #293855 !important; }//東京ドームホテル
+  .is-color-2a576d-sptb { color: #2a576d !important; }//プリズムホール
+  .is-color-003459-sptb { color: #003459 !important; }//スポドリ！
+  .is-color-7db2f1-sptb { color: #7db2f1 !important; }//シアターGロッソ
+  .is-color-3914af-sptb { color: #3914af !important; }//ローラースケート
+  .is-color-2d4696-sptb { color: #2d4696 !important; }//オフト後楽園
+  // color pattern red/pink
+  .is-color-ee2227-sptb { color: #ee2227 !important; }//シアターＧロッソ/ボクシング
+  .is-color-c2544b-sptb { color: #c2544b !important; }//スポドリ
+  .is-color-e60012-sptb { color: #e60012 !important; }//プリズムホール
+  .is-color-9b1616-sptb { color: #9b1616 !important; }//後楽園ホール
+  .is-color-df0023-sptb { color: #df0023 !important; }//東京ドームシティ
+  .is-color-cc1300-sptb { color: #cc1300 !important; }//ボウリング/ボウリング（5F）
+  .is-color-f5b1aa-sptb { color: #f5b1aa !important; }//Gallery AaMo/アーモ
+  .is-color-e4005d-sptb { color: #e4005d !important; }//ヒーローショー/ヒーローショー
+  .is-color-da0c54-sptb { color: #da0c54 !important; }//アトラクションズ
+  .is-color-de006d-sptb { color: #de006d !important; }//ローラースケート
+  // color pattern orange/yellow
+  .is-color-d83e05-sptb { color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-color-e85b00-sptb { color: #e85b00 !important; }//GO-FUN/グルメ
+  .is-color-fabd00-sptb { color: #fabd00 !important; }//TeNQ
+  .is-color-ffa235-sptb { color: #ffa235 !important; }//ミーツポート
+  // color pattern black/brown
+  .is-color-651f37-sptb { color: #651f37 !important; }//格闘技/レンタルフィールド
+  .is-color-231f21-sptb { color: #231f21 !important; }//TDCホール
+  .is-color-2e1e0b-sptb { color: #2e1e0b !important; }//CuBAR LOUNGE
+  .is-color-666666-sptb { color: #666666 !important; }//その他
+  .is-color-333333-sptb { color: #333333 !important; }//
+  .is-color-000000-sptb { color: #000000 !important; }//TeNQ
+}
+@include mq-sp {
+  // color pattern green
+  .is-color-077e1a-sp { color: #077e1a !important; }//ゴルフ
+  .is-color-268300-sp { color: #268300 !important; }//ウインズ後楽園
+  .is-color-105928-sp { color: #105928 !important; }//後楽園ホール
+  .is-color-00563f-sp { color: #00563f !important; }//野球殿堂博物館
+  .is-color-00893c-sp { color: #00893c !important; }//アソボーノ・ショップ
+  .is-color-007c00-sp { color: #007c00 !important; }//東京ドーム
+  .is-color-007f7f-sp { color: #007f7f !important; }//東京ドーム
+  // color pattern blue
+  .is-color-005bac-sp { color: #005bac !important; }//ラクーア
+  .is-color-123a9d-sp { color: #123a9d !important; }//野球
+  .is-color-0078A6-sp { color: #0078A6 !important; }//スパ ラクーア
+  .is-color-141e44-sp { color: #141e44 !important; }//公開収録
+  .is-color-014da2-sp { color: #014da2 !important; }//TDCホール
+  .is-color-293855-sp { color: #293855 !important; }//東京ドームホテル
+  .is-color-2a576d-sp { color: #2a576d !important; }//プリズムホール
+  .is-color-003459-sp { color: #003459 !important; }//スポドリ！
+  .is-color-7db2f1-sp { color: #7db2f1 !important; }//シアターGロッソ
+  .is-color-3914af-sp { color: #3914af !important; }//ローラースケート
+  .is-color-2d4696-sp { color: #2d4696 !important; }//オフト後楽園
+  // color pattern red/pink
+  .is-color-ee2227-sp { color: #ee2227 !important; }//シアターＧロッソ/ボクシング
+  .is-color-c2544b-sp { color: #c2544b !important; }//スポドリ
+  .is-color-e60012-sp { color: #e60012 !important; }//プリズムホール
+  .is-color-9b1616-sp { color: #9b1616 !important; }//後楽園ホール
+  .is-color-df0023-sp { color: #df0023 !important; }//東京ドームシティ
+  .is-color-cc1300-sp { color: #cc1300 !important; }//ボウリング/ボウリング（5F）
+  .is-color-f5b1aa-sp { color: #f5b1aa !important; }//Gallery AaMo/アーモ
+  .is-color-e4005d-sp { color: #e4005d !important; }//ヒーローショー/ヒーローショー
+  .is-color-da0c54-sp { color: #da0c54 !important; }//アトラクションズ
+  .is-color-de006d-sp { color: #de006d !important; }//ローラースケート
+  // color pattern orange/yellow
+  .is-color-d83e05-sp { color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-color-e85b00-sp { color: #e85b00 !important; }//GO-FUN/グルメ
+  .is-color-fabd00-sp { color: #fabd00 !important; }//TeNQ
+  .is-color-ffa235-sp { color: #ffa235 !important; }//ミーツポート
+  // color pattern black/brown
+  .is-color-651f37-sp { color: #651f37 !important; }//格闘技/レンタルフィールド
+  .is-color-231f21-sp { color: #231f21 !important; }//TDCホール
+  .is-color-2e1e0b-sp { color: #2e1e0b !important; }//CuBAR LOUNGE
+  .is-color-666666-sp { color: #666666 !important; }//その他
+  .is-color-333333-sp { color: #333333 !important; }//
+  .is-color-000000-sp { color: #000000 !important; }//TeNQ
+}
+
+// background
+.is-bg-transparent { background-color: transparent !important; }
+
+// background color pattern
+.is-bgcolor-077e1a { background-color: #077e1a !important; }//ゴルフ
+.is-bgcolor-123a9d { background-color: #123a9d !important; }//野球
+.is-bgcolor-141e44 { background-color: #141e44 !important; }//公開収録
+.is-bgcolor-ee2227 { background-color: #ee2227 !important; }//ボクシング
+.is-bgcolor-d83e05 { background-color: #d83e05 !important; }//プロレス/ボルダリング
+.is-bgcolor-651f37 { background-color: #651f37 !important; }//格闘技/レンタルフィールド
+
+@include mq-pc {
+  .is-bgcolor-077e1a-pc { background-color: #077e1a !important; }//ゴルフ
+  .is-bgcolor-123a9d-pc { background-color: #123a9d !important; }//野球
+  .is-bgcolor-141e44-pc { background-color: #141e44 !important; }//公開収録
+  .is-bgcolor-ee2227-pc { background-color: #ee2227 !important; }//ボクシング
+  .is-bgcolor-d83e05-pc { background-color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-bgcolor-651f37-pc { background-color: #651f37 !important; }//格闘技/レンタルフィールド
+}
+@include mq-pctb {
+  .is-bgcolor-077e1a-pctb { background-color: #077e1a !important; }//ゴルフ
+  .is-bgcolor-123a9d-pctb { background-color: #123a9d !important; }//野球
+  .is-bgcolor-141e44-pctb { background-color: #141e44 !important; }//公開収録
+  .is-bgcolor-ee2227-pctb { background-color: #ee2227 !important; }//ボクシング
+  .is-bgcolor-d83e05-pctb { background-color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-bgcolor-651f37-pctb { background-color: #651f37 !important; }//格闘技/レンタルフィールド
+}
+@include mq-tb {
+  .is-bgcolor-077e1a-tb { background-color: #077e1a !important; }//ゴルフ
+  .is-bgcolor-123a9d-tb { background-color: #123a9d !important; }//野球
+  .is-bgcolor-141e44-tb { background-color: #141e44 !important; }//公開収録
+  .is-bgcolor-ee2227-tb { background-color: #ee2227 !important; }//ボクシング
+  .is-bgcolor-d83e05-tb { background-color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-bgcolor-651f37-tb { background-color: #651f37 !important; }//格闘技/レンタルフィールド
+}
+@include mq-sptb {
+  .is-bgcolor-077e1a-sptb { background-color: #077e1a !important; }//ゴルフ
+  .is-bgcolor-123a9d-sptb { background-color: #123a9d !important; }//野球
+  .is-bgcolor-141e44-sptb { background-color: #141e44 !important; }//公開収録
+  .is-bgcolor-ee2227-sptb { background-color: #ee2227 !important; }//ボクシング
+  .is-bgcolor-d83e05-sptb { background-color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-bgcolor-651f37-sptb { background-color: #651f37 !important; }//格闘技/レンタルフィールド
+}
+@include mq-sp {
+  .is-bgcolor-077e1a-sp { background-color: #077e1a !important; }//ゴルフ
+  .is-bgcolor-123a9d-sp { background-color: #123a9d !important; }//野球
+  .is-bgcolor-141e44-sp { background-color: #141e44 !important; }//公開収録
+  .is-bgcolor-ee2227-sp { background-color: #ee2227 !important; }//ボクシング
+  .is-bgcolor-d83e05-sp { background-color: #d83e05 !important; }//プロレス/ボルダリング
+  .is-bgcolor-651f37-sp { background-color: #651f37 !important; }//格闘技/レンタルフィールド
+}
+

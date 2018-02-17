@@ -1,0 +1,179 @@
+//mixin
+// mediaQuery
+//サイト全体で使うfont-size
+@mixin baseFontSize {
+  font-size: 16px;
+  line-height: 1.5;
+}
+// mediaQuery order
+@mixin mq-max-order($orderW) {
+  @media screen and (max-width: $orderW) {
+    @content;
+  }
+}
+@mixin mq-min-order($orderW) {
+  @media screen and (min-width: $orderW) {
+    @content;
+  }
+}
+// mediaQuery smallest layout
+@mixin mq-smallest {
+  @media screen and (max-width: 340px) {
+    @content;
+  }
+}
+// mediaQuery sp-small layout
+@mixin mq-sp-small {
+  @media screen and (max-width: 374px) {
+    @content;
+  }
+}
+// mediaQuery Smart phone layout
+@mixin mq-sp {
+  @media screen and (max-width: 599px) {
+    @content;
+  }
+}
+// mediaQuery Tablet & Laptop
+@mixin mq-tb {
+  @media screen and (min-width: 600px) and (max-width: 1279px) {
+    @content;
+  }
+}
+// mediaQuery Desktop
+@mixin mq-pc {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+// mediaQuery not Mobile
+@mixin mq-pctb {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+// mediaQuery not Desktop
+@mixin mq-sptb {
+  @media screen and (max-width: 1279px) {
+    @content;
+  }
+}
+// mediaQuery Landscape
+@mixin mq-land {
+  @media only screen and (orientation: landscape) and (max-width: 767px) {
+    @content;
+  }
+}
+// mediaQuery print
+@mixin mq-print {
+  @media only print {
+    @content;
+  }
+}
+
+// sprite
+// Retina用スプライト
+@mixin r-sprite-width($sprite) {
+  width: nth($sprite, 5) / 2;
+}
+@mixin r-sprite-height($sprite) {
+  height: nth($sprite, 6) / 2;
+}
+@mixin r-sprite-position($sprite) {
+  $sprite-offset-x: round(nth($sprite, 3)/2);
+  $sprite-offset-y: round(nth($sprite, 4)/2);
+  background-position: $sprite-offset-x	$sprite-offset-y;
+}
+@mixin r-sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url($sprite-image);
+}
+// background-sizeのmixinを新たに生成
+@mixin r-sprite-size($sprite) {
+  background-size: round(nth($sprite, 7)/2) round(nth($sprite, 8)/2);
+}
+@mixin r-sprite($sprite) {
+  @include r-sprite-image($sprite);
+  @include r-sprite-position($sprite);
+  @include r-sprite-width($sprite);
+  @include r-sprite-height($sprite);
+  @include r-sprite-size($sprite);
+}
+// position
+// position middle
+@mixin positionMiddle {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+// position center
+@mixin positionCenter {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+//hover
+// hover underline
+@mixin hoverUnderline {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+// hover opacity
+@mixin hoverOpacity {
+  @include mq-pc {
+    opacity: 1;
+    transition: opacity .4s ease;
+    &:hover {
+    -ms-filter: alpha( opacity=70);
+    filter: alpha( opacity=70);
+    opacity: .7;
+    }
+  }
+}
+
+//img
+//img-adjust
+@mixin adjust() {
+  width: 100%;
+  height: auto;
+}
+
+//clear
+// clearfix
+@mixin clearfix() {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+// link blank
+@mixin blank-icon-1() {
+  &[target="_blank"] {
+
+  }
+}
+
+/* ==========================================================
+ txt-hide
+========================================================== */
+@mixin txt-hide() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+}

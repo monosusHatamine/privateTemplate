@@ -1,12 +1,49 @@
-@charset "utf-8";
-@import "../base/_variable";
-@import "../base/_mixin";
-@import "../base/_sprite";
-
-//
-//mixin
-//
+/* ==========================================================
+ wrapper
+========================================================== */
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  @include mq-pc {
+  }
+  @include mq-sp {
+  }
+}
 
 /* ==========================================================
- layout
+ contents
 ========================================================== */
+.contents {
+  width: 100%;
+  margin: auto;
+  @include mq-pc {
+  }
+  @include mq-tb {
+  }
+  @include mq-sp {
+  }
+}
+
+/* ==========================================================
+ contents-main
+========================================================== */
+.contents-main {
+  position: relative;
+  overflow: hidden;//margin領域確保
+  background-color: $whitecolor;
+
+  @include mq-pc {
+
+  }
+  @include mq-sptb {
+
+  }
+  @include mq-pc {
+
+  }
+  @include mq-tb {
+  }
+  @include mq-sp {
+
+  }
+}
