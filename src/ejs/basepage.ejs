@@ -1,0 +1,42 @@
+<% var pageID = ID01_1; %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes">
+    <meta name="format-detection" content="telephone=no">
+    <title><%= pageID.title %></title>
+    <meta name="description" content="<%= pageID.description %>">
+    <meta name="keywords" content="<%= pageID.keywords %>">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed" rel="stylesheet">
+    <link href="/common/css/common.css" rel="stylesheet">
+    <script src="/common/js/common.js"></script>
+    <style>
+        .box-color {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+<%- include('./common/_header') -%>
+  <div class="contents">
+    <main role="main">
+
+      <article>
+
+          <div class="box-color">
+              Box Color
+          </div>
+          <!-- /.box-color -->
+
+      </article>
+
+    </main>
+  </div>
+<%- include('./common/_footer') -%>
+</div>
+</body>
+</html>

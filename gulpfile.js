@@ -124,8 +124,9 @@ gulp.task('pug', function() {
  ------------------------------ */
 //ejs
 gulp.task('ejs', function() {
+  var json = JSON.parse(fs.readFileSync('./src/data/config.json'));
   gulp.src([path.src_ejs,'!ejs/**/_*.ejs'])
-    .pipe(ejs())
+    .pipe(ejs(json,{"ext": ".html"}))
     .pipe(rename({ extname: '.html' }))
     .pipe(gulp.dest(path.dest))
 });

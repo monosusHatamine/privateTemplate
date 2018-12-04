@@ -3,104 +3,10 @@
 @import "../base/_mixin";
 @import "../base/_sprite";
 
+//
+//mixin
+//
+
 /* ==========================================================
  text
 ========================================================== */
-.txt-cmn,
-%txt-cmn {
-  font-size: 1.2rem;
-  @include mq-pc() {
-    font-size: 1.4rem;
-  }
-}
-
-/* txt-cmn-01
---------------------------------------------- */
-.txt-cmn-01 {
-  @extend %txt-cmn;
-  font-weight: bold;
-  font-size: 10px;
-  margin-top: 25px;
-  @include mq-pc() {
-    margin-top: 0;
-    margin-bottom: 50px;
-    font-size: 14px;
-  }
-}
-
-/* txt-post
---------------------------------------------- */
-.txt-post {
-  margin-bottom: 23px;
-  font-size: 13px;
-  @include mq-pc() {
-    font-size: 14px;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-/* txt-interview
---------------------------------------------- */
-.txt-interview {
-  margin-bottom: 13px;
-  line-height: 1.7;
-  @include mq-pc() {
-    text-align: center;
-  }
-}
-
-.txt-interview-caption {
-  margin-top: 10px;
-  margin-bottom: 35px;
-  font-size: 1.1rem;
-  text-align: center;
-  line-height: 1.7;
-  color: #555;
-}
-
-/* txt-intro
---------------------------------------------- */
-.txt-intro {
-  padding-bottom: 25px;
-  @include mq-pc() {
-    padding-bottom: 80px;
-  }
-}
-
-/* txt-error
---------------------------------------------- */
-.txt-error {
-  color: #af1818;
-  font-size: 10px;
-  transform-origin: left;
-  transform: scale(.9);
-  @include mq-pc() {
-    font-size: 12px;
-    transform: none;
-  }
-}
-
-/* ----------------------------------------------------------
- txt-bold
----------------------------------------------------------- */
-.txt-bold {
-  font-weight: bold;
-}
-
-/* ----------------------------------------------------------
- txt-bold-primary
----------------------------------------------------------- */
-.txt-bold-primary {
-  font-weight: bold;
-  color: #ae2d0a;
-}
-
-/* ----------------------------------------------------------
- txt-color-primary
----------------------------------------------------------- */
-.txt-color-primary {
-  color: #ae2d0a;
-}

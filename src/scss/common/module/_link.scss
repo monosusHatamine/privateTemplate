@@ -3,14 +3,10 @@
 @import "../base/_mixin";
 @import "../base/_sprite";
 
+//
+//mixin
+//
+
 /* ==========================================================
  link
 ========================================================== */
-.link-cmn {
-  text-decoration: underline;
-  &:hover {
-    text-decoration: none;
-    opacity: 1;
-    transition: none;
-  }
-}
